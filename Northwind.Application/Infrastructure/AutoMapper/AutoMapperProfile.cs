@@ -39,14 +39,14 @@ namespace FleetControl.Application.Infrastructure.AutoMapper
                 map.CreateMappings(this);
             }
 
-            var assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "Northwind.Application.Commands");
+            var assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "FleetControl.Application.Commands");
             mapsFrom = MapperProfileHelper.LoadCustomMappings(assembly);
             foreach (var map in mapsFrom)
             {
                 map.CreateMappings(this);
             }
 
-            assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "Northwind.Application.Queries");
+            assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "FleetControl.Application.Queries");
             mapsFrom = MapperProfileHelper.LoadCustomMappings(assembly);
             foreach (var map in mapsFrom)
             {

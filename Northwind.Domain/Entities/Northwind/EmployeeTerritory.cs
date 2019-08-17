@@ -1,4 +1,4 @@
-﻿namespace FleetControl.Domain.Entities
+﻿namespace Northwind.Domain.Entities
 {
     public class EmployeeTerritory
     {

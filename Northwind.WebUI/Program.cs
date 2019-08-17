@@ -20,11 +20,14 @@ namespace FleetControl.WebUI
             {
                 try
                 {
-                    var context = scope.ServiceProvider.GetService<INorthwindDbContext>();
+                    var northwindContext = scope.ServiceProvider.GetService<INorthwindDbContext>();
+                    var northwindConcreteContext = (NorthwindDbContext) northwindContext;
+                    northwindConcreteContext.Database.Migrate();
+                    NorthwindInitializer.Initialize(northwindConcreteContext);
 
-                    var concreteContext = (NorthwindDbContext) context;
-                    concreteContext.Database.Migrate();
-                    NorthwindInitializer.Initialize(concreteContext);
+                    var fleetControlContext = scope.ServiceProvider.GetService<IFleetControlContext>();
+                    var fleetControlConcreteContext = (NorthwindDbContext) fleetControlContext;
+                    fleetControlConcreteContext.Database.Migrate();
                 }
                 catch (Exception ex)
                 {

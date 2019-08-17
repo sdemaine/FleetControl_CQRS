@@ -1,20 +1,20 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using FleetControl.Application.Queries.GetProduct;
-using FleetControl.Application.Commands.CreateProduct;
-using FleetControl.Application.Commands.UpdateProduct;
-using FleetControl.Application.Commands.DeleteProduct;
-using FleetControl.Application.Queries.GetAllProducts;
+using Northwind.Application.Queries.GetProduct;
+using Northwind.Application.Commands.CreateProduct;
+using Northwind.Application.Commands.UpdateProduct;
+using Northwind.Application.Commands.DeleteProduct;
+using Northwind.Application.Queries.GetAllProducts;
 
 namespace FleetControl.WebUI.Controllers
 {
     public class ProductsController : BaseController
     {
         [HttpGet]
-        public async Task<ActionResult<ProductsListViewModel>> GetAll()
+        public async Task<ActionResult<NorthwindProductsListViewModel>> GetAll()
         {
-            return Ok(await Mediator.Send(new GetAllProductsQuery()));
+            return Ok(await Mediator.Send(new GetAllNorthwindProductsQuery()));
         }
 
         [HttpGet("{id}")]
@@ -24,7 +24,7 @@ namespace FleetControl.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> Create([FromBody] CreateProductCommand command)
+        public async Task<ActionResult<int>> Create([FromBody] CreateNorthwindProductCommand command)
         {
             var productId = await Mediator.Send(command);
 
@@ -34,7 +34,7 @@ namespace FleetControl.WebUI.Controllers
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
-        public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
+        public async Task<IActionResult> Update([FromBody] UpdateNorthwindProductCommand command)
         {
             await Mediator.Send(command);
 
@@ -46,7 +46,7 @@ namespace FleetControl.WebUI.Controllers
         [ProducesDefaultResponseType]
         public async Task<IActionResult> Delete(int id)
         {
-            await Mediator.Send(new DeleteProductCommand { Id = id });
+            await Mediator.Send(new DeleteNorthwindProductCommand { Id = id });
 
             return NoContent();
         }

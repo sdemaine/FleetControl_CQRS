@@ -1,6 +1,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Queries.GetAllProducts;
+using Northwind.Application.Queries.GetAllProducts;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -22,9 +22,9 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
 
             response.EnsureSuccessStatusCode();
 
-            var vm = await Utilities.GetResponseContent<ProductsListViewModel>(response);
+            var vm = await Utilities.GetResponseContent<NorthwindProductsListViewModel>(response);
 
-            Assert.IsType<ProductsListViewModel>(vm);
+            Assert.IsType<NorthwindProductsListViewModel>(vm);
             Assert.NotEmpty(vm.Products);
         }
     }

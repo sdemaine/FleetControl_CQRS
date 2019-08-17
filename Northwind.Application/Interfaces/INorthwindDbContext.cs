@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using FleetControl.Domain.Entities;
+using Northwind.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -1,6 +1,6 @@
 ﻿using FleetControl.Domain.ValueObjects;
 
-namespace FleetControl.Domain.Entities
+namespace Northwind.Domain.Entities
 {
     public class User
     {

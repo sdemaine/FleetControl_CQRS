@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Moq;
-using FleetControl.Application.Commands.CreateCustomer;
+using Northwind.Application.Commands.CreateCustomer;
 using FleetControl.Application.Tests.Infrastructure;
 using System.Threading;
 using Xunit;
@@ -14,15 +14,15 @@ namespace FleetControl.Application.Tests.Customers.Commands.CreateCustomer
         {
             // Arrange
             var mediatorMock = new Mock<IMediator>();
-            var sut = new CreateCustomerCommand.Handler(_context, mediatorMock.Object);
+            var sut = new CreateNorthwindCustomerCommand.Handler(_context, mediatorMock.Object);
             var newCustomerId = "QAZQ1";
 
             // Act
-            var result = sut.Handle(new CreateCustomerCommand { Id = newCustomerId }, CancellationToken.None);
+            var result = sut.Handle(new CreateNorthwindCustomerCommand { Id = newCustomerId }, CancellationToken.None);
 
 
             // Assert
-            mediatorMock.Verify(m => m.Publish(It.Is<CustomerCreated>(cc => cc.CustomerId == newCustomerId), It.IsAny<CancellationToken>()), Times.Once);
+            mediatorMock.Verify(m => m.Publish(It.Is<NorthwindCustomerCreated>(cc => cc.CustomerId == newCustomerId), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

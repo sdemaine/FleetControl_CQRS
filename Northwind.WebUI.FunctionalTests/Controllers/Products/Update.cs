@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Commands.UpdateProduct;
+using Northwind.Application.Commands.UpdateProduct;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -19,7 +19,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
         [Fact]
         public async Task GivenUpdateProductCommand_ReturnsSuccessStatusCode()
         {
-            var command = new UpdateProductCommand
+            var command = new UpdateNorthwindProductCommand
             {
                 ProductId = 77,
                 ProductName = "Original Frankfurter grüne Soße",
@@ -39,7 +39,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
         [Fact]
         public async Task GivenUpdateProductCommandWithInvalidId_ReturnsNotFoundStatusCode()
         {
-            var invalidCommand = new UpdateProductCommand
+            var invalidCommand = new UpdateNorthwindProductCommand
             {
                 ProductId = 0,
                 ProductName = "Original Frankfurter grüne Soße",

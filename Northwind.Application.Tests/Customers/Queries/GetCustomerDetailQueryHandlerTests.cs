@@ -1,12 +1,12 @@
-﻿using FleetControl.Application.Queries.GetCustomerDetail;
-using FleetControl.Application.Tests.Infrastructure;
+﻿using FleetControl.Application.Tests.Infrastructure;
 using FleetControl.Persistence;
+using Northwind.Application.Queries.GetCustomerDetail;
 using Shouldly;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace FleetControl.Application.Tests.Customers.Queries
+namespace Northwind.Application.Tests.Customers.Queries
 {
     [Collection("QueryCollection")]
     public class GetCustomerDetailQueryHandlerTests
@@ -20,11 +20,11 @@ namespace FleetControl.Application.Tests.Customers.Queries
 
         public async Task GetCustomerDetail()
         {
-            var sut = new GetCustomerDetailQueryHandler(_context);
+            var sut = new GetNorthwindCustomerDetailQueryHandler(_context);
 
-            var result = await sut.Handle(new GetCustomerDetailQuery { Id = "JASON" }, CancellationToken.None);
+            var result = await sut.Handle(new GetNorthwindCustomerDetailQuery { Id = "JASON" }, CancellationToken.None);
 
-            result.ShouldBeOfType<CustomerDetailModel>();
+            result.ShouldBeOfType<NorthwindCustomerDetailModel>();
             result.Id.ShouldBe("JASON");
         }
     }

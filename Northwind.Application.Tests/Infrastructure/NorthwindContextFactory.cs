@@ -1,9 +1,9 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using FleetControl.Domain.Entities;
+using Northwind.Domain.Entities;
 using FleetControl.Persistence;
 
-namespace FleetControl.Application.Tests.Infrastructure
+namespace Northwind.Application.Tests.Infrastructure
 {
     public class NorthwindContextFactory
     {

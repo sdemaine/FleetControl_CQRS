@@ -328,11 +328,11 @@ namespace FleetControl.Domain
         [DataMember]
         public bool IsVoyager { get; set; }
 
-        [DataMember]
-        public int? BusinessHoursId { get; set; }
+        //[DataMember]
+        //public int? BusinessHoursId { get; set; }
 
-        [DataMember]
-        public virtual BusinessHours BusinessHours { get; set; }
+        //[DataMember]
+        //public virtual BusinessHours BusinessHours { get; set; }
 
         [DataMember]
         public BooleanEnum DepartmentRequiredForDriver { get; set; }

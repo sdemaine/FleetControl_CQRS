@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Commands.UpdateCustomer;
+using Northwind.Application.Commands.UpdateCustomer;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -19,7 +19,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
         [Fact]
         public async Task GivenUpdateCustomerCommand_ReturnsSuccessStatusCode()
         {
-            var command = new UpdateCustomerCommand
+            var command = new UpdateNorthwindCustomerCommand
             {
                 Id = "ALFKI",
                 Address = "Obere Str. 57",
@@ -43,7 +43,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
         [Fact]
         public async Task GivenUpdateCustomerCommandWithInvalidId_ReturnsNotFoundStatusCode()
         {
-            var invalidCommand = new UpdateCustomerCommand
+            var invalidCommand = new UpdateNorthwindCustomerCommand
             {
                 Id = "AAAAA",
                 Address = "Obere Str. 57",

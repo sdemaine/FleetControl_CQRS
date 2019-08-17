@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Queries.GetProduct;
+using Northwind.Application.Queries.GetProduct;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 

@@ -9,12 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using FleetControl.Application.Commands.CreateCustomer;
-using FleetControl.Application.Commands.CreateProduct;
+using Northwind.Application.Commands.CreateCustomer;
+using Northwind.Application.Commands.CreateProduct;
 using FleetControl.Application.Infrastructure;
 using FleetControl.Application.Infrastructure.AutoMapper;
 using FleetControl.Application.Interfaces;
-using FleetControl.Application.Queries.GetProduct;
+using Northwind.Application.Queries.GetProduct;
 using FleetControl.Common;
 using FleetControl.Infrastructure;
 using FleetControl.Persistence;
@@ -47,13 +47,16 @@ namespace FleetControl.WebUI
             // Add MediatR (this is a bit clunky but it gets the job done for now).
             // I am choosing a handler in each of the Query and Command assemblies so that I can tell Mediatr to monitor them
             services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(CreateProductCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreateNorthwindProductCommandHandler).GetTypeInfo().Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             // Add DbContext using SQL Server Provider
             services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
+
+            services.AddDbContext<IFleetControlContext, FleetControlContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("FleetControlDatabase")));
 
             services
                 .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))

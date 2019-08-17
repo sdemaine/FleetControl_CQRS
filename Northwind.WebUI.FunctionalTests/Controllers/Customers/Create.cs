@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Commands.CreateCustomer;
+using Northwind.Application.Commands.CreateCustomer;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -18,7 +18,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
         [Fact]
         public async Task GivenCreateCustomerCommand_ReturnsSuccessStatusCode()
         {
-            var command = new CreateCustomerCommand
+            var command = new CreateNorthwindCustomerCommand
             {
                 Id = "ABCDE",
                 Address = "Obere Str. 57",

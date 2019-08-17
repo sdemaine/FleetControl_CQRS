@@ -1,5 +1,6 @@
 using System;
 using FleetControl.Persistence;
+using Northwind.Application.Tests.Infrastructure;
 
 namespace FleetControl.Application.Tests.Infrastructure
 {

@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Queries.GetCustomerDetail;
+using Northwind.Application.Queries.GetCustomerDetail;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -25,7 +25,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
 
             response.EnsureSuccessStatusCode();
 
-            var customer = await Utilities.GetResponseContent<CustomerDetailModel>(response);
+            var customer = await Utilities.GetResponseContent<NorthwindCustomerDetailModel>(response);
 
             Assert.Equal(id, customer.Id);
         }

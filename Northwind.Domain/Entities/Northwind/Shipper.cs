@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FleetControl.Domain.Entities
+namespace Northwind.Domain.Entities
 {
     public class Shipper
     {

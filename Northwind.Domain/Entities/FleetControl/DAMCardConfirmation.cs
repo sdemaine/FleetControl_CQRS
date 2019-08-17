@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace FleetControl.Domain
 {
     [Table("DAMCardConfirmation")]
-    public class DAMCardConfirmation
+    public class DAMCardConfirmation : EntityBase
     {
         [DataMember]
         [MaxLength(1)]

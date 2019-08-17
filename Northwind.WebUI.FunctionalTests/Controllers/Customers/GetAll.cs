@@ -2,6 +2,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using FleetControl.Application.Queries.GetCustomerList;
 using FleetControl.WebUI.FunctionalTests.Common;
+using Northwind.Application.Queries.GetCustomerList;
 using Xunit;
 
 namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
@@ -22,9 +23,9 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
 
             response.EnsureSuccessStatusCode();
 
-            var vm = await Utilities.GetResponseContent<CustomersListViewModel>(response);
+            var vm = await Utilities.GetResponseContent<NorthwindCustomersListViewModel>(response);
 
-            Assert.IsType<CustomersListViewModel>(vm);
+            Assert.IsType<NorthwindCustomersListViewModel>(vm);
             Assert.NotEmpty(vm.Customers);
         }
     }

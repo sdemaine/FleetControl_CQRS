@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Categories\" />
-    <Folder Include="Products\" />
+    <Folder Include="Northwind\Categories\" />
   </ItemGroup>
 
   <ItemGroup>

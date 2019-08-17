@@ -87,10 +87,10 @@ export class CategoriesClient implements ICategoriesClient {
 }
 
 export interface ICustomersClient {
-    getAll(): Observable<CustomersListViewModel | null>;
-    create(command: CreateCustomerCommand): Observable<void>;
-    get(id: string | null): Observable<CustomerDetailModel | null>;
-    update(id: string, command: UpdateCustomerCommand): Observable<void>;
+    getAll(): Observable<NorthwindCustomersListViewModel | null>;
+    create(command: CreateNorthwindCustomerCommand): Observable<void>;
+    get(id: string | null): Observable<NorthwindCustomerDetailModel | null>;
+    update(id: string, command: UpdateNorthwindCustomerCommand): Observable<void>;
     delete(id: string | null): Observable<void>;
     getOrders(customerId: string | null): Observable<CustomerOrderListViewModel | null>;
 }
@@ -106,7 +106,7 @@ export class CustomersClient implements ICustomersClient {
         this.baseUrl = baseUrl ? baseUrl : "";
     }
 
-    getAll(): Observable<CustomersListViewModel | null> {
+    getAll(): Observable<NorthwindCustomersListViewModel | null> {
         let url_ = this.baseUrl + "/api/Customers";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -125,14 +125,14 @@ export class CustomersClient implements ICustomersClient {
                 try {
                     return this.processGetAll(<any>response_);
                 } catch (e) {
-                    return <Observable<CustomersListViewModel | null>><any>_observableThrow(e);
+                    return <Observable<NorthwindCustomersListViewModel | null>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<CustomersListViewModel | null>><any>_observableThrow(response_);
+                return <Observable<NorthwindCustomersListViewModel | null>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetAll(response: HttpResponseBase): Observable<CustomersListViewModel | null> {
+    protected processGetAll(response: HttpResponseBase): Observable<NorthwindCustomersListViewModel | null> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -143,7 +143,7 @@ export class CustomersClient implements ICustomersClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? CustomersListViewModel.fromJS(resultData200) : <any>null;
+            result200 = resultData200 ? NorthwindCustomersListViewModel.fromJS(resultData200) : <any>null;
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -151,10 +151,10 @@ export class CustomersClient implements ICustomersClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<CustomersListViewModel | null>(<any>null);
+        return _observableOf<NorthwindCustomersListViewModel | null>(<any>null);
     }
 
-    create(command: CreateCustomerCommand): Observable<void> {
+    create(command: CreateNorthwindCustomerCommand): Observable<void> {
         let url_ = this.baseUrl + "/api/Customers";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -204,7 +204,7 @@ export class CustomersClient implements ICustomersClient {
         }
     }
 
-    get(id: string | null): Observable<CustomerDetailModel | null> {
+    get(id: string | null): Observable<NorthwindCustomerDetailModel | null> {
         let url_ = this.baseUrl + "/api/Customers/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -226,14 +226,14 @@ export class CustomersClient implements ICustomersClient {
                 try {
                     return this.processGet(<any>response_);
                 } catch (e) {
-                    return <Observable<CustomerDetailModel | null>><any>_observableThrow(e);
+                    return <Observable<NorthwindCustomerDetailModel | null>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<CustomerDetailModel | null>><any>_observableThrow(response_);
+                return <Observable<NorthwindCustomerDetailModel | null>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGet(response: HttpResponseBase): Observable<CustomerDetailModel | null> {
+    protected processGet(response: HttpResponseBase): Observable<NorthwindCustomerDetailModel | null> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -244,7 +244,7 @@ export class CustomersClient implements ICustomersClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? CustomerDetailModel.fromJS(resultData200) : <any>null;
+            result200 = resultData200 ? NorthwindCustomerDetailModel.fromJS(resultData200) : <any>null;
             return _observableOf(result200);
             }));
         } else if (status === 404) {
@@ -259,10 +259,10 @@ export class CustomersClient implements ICustomersClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<CustomerDetailModel | null>(<any>null);
+        return _observableOf<NorthwindCustomerDetailModel | null>(<any>null);
     }
 
-    update(id: string, command: UpdateCustomerCommand): Observable<void> {
+    update(id: string, command: UpdateNorthwindCustomerCommand): Observable<void> {
         let url_ = this.baseUrl + "/api/Customers/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -434,10 +434,10 @@ export class CustomersClient implements ICustomersClient {
 }
 
 export interface IProductsClient {
-    getAll(): Observable<ProductsListViewModel | null>;
+    getAll(): Observable<NorthwindProductsListViewModel | null>;
     get(id: number): Observable<ProductViewModel | null>;
-    create(command: CreateProductCommand): Observable<number>;
-    update(command: UpdateProductCommand): Observable<void>;
+    create(command: CreateNorthwindProductCommand): Observable<number>;
+    update(command: UpdateNorthwindProductCommand): Observable<void>;
     delete(id: number): Observable<void>;
 }
 
@@ -452,7 +452,7 @@ export class ProductsClient implements IProductsClient {
         this.baseUrl = baseUrl ? baseUrl : "";
     }
 
-    getAll(): Observable<ProductsListViewModel | null> {
+    getAll(): Observable<NorthwindProductsListViewModel | null> {
         let url_ = this.baseUrl + "/api/Products/GetAll";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -471,14 +471,14 @@ export class ProductsClient implements IProductsClient {
                 try {
                     return this.processGetAll(<any>response_);
                 } catch (e) {
-                    return <Observable<ProductsListViewModel | null>><any>_observableThrow(e);
+                    return <Observable<NorthwindProductsListViewModel | null>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<ProductsListViewModel | null>><any>_observableThrow(response_);
+                return <Observable<NorthwindProductsListViewModel | null>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetAll(response: HttpResponseBase): Observable<ProductsListViewModel | null> {
+    protected processGetAll(response: HttpResponseBase): Observable<NorthwindProductsListViewModel | null> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -489,7 +489,7 @@ export class ProductsClient implements IProductsClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? ProductsListViewModel.fromJS(resultData200) : <any>null;
+            result200 = resultData200 ? NorthwindProductsListViewModel.fromJS(resultData200) : <any>null;
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -497,7 +497,7 @@ export class ProductsClient implements IProductsClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<ProductsListViewModel | null>(<any>null);
+        return _observableOf<NorthwindProductsListViewModel | null>(<any>null);
     }
 
     get(id: number): Observable<ProductViewModel | null> {
@@ -551,7 +551,7 @@ export class ProductsClient implements IProductsClient {
         return _observableOf<ProductViewModel | null>(<any>null);
     }
 
-    create(command: CreateProductCommand): Observable<number> {
+    create(command: CreateNorthwindProductCommand): Observable<number> {
         let url_ = this.baseUrl + "/api/Products/Create";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -603,7 +603,7 @@ export class ProductsClient implements IProductsClient {
         return _observableOf<number>(<any>null);
     }
 
-    update(command: UpdateProductCommand): Observable<void> {
+    update(command: UpdateNorthwindProductCommand): Observable<void> {
         let url_ = this.baseUrl + "/api/Products/Update";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -803,10 +803,10 @@ export interface IProductPreviewDto {
     unitPrice?: number | undefined;
 }
 
-export class CustomersListViewModel implements ICustomersListViewModel {
-    customers?: CustomerLookupModel[] | undefined;
+export class NorthwindCustomersListViewModel implements INorthwindCustomersListViewModel {
+    customers?: NorthwindCustomerLookupModel[] | undefined;
 
-    constructor(data?: ICustomersListViewModel) {
+    constructor(data?: INorthwindCustomersListViewModel) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -820,14 +820,14 @@ export class CustomersListViewModel implements ICustomersListViewModel {
             if (data["customers"] && data["customers"].constructor === Array) {
                 this.customers = [] as any;
                 for (let item of data["customers"])
-                    this.customers!.push(CustomerLookupModel.fromJS(item));
+                    this.customers!.push(NorthwindCustomerLookupModel.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any): CustomersListViewModel {
+    static fromJS(data: any): NorthwindCustomersListViewModel {
         data = typeof data === 'object' ? data : {};
-        let result = new CustomersListViewModel();
+        let result = new NorthwindCustomersListViewModel();
         result.init(data);
         return result;
     }
@@ -843,15 +843,15 @@ export class CustomersListViewModel implements ICustomersListViewModel {
     }
 }
 
-export interface ICustomersListViewModel {
-    customers?: CustomerLookupModel[] | undefined;
+export interface INorthwindCustomersListViewModel {
+    customers?: NorthwindCustomerLookupModel[] | undefined;
 }
 
-export class CustomerLookupModel implements ICustomerLookupModel {
+export class NorthwindCustomerLookupModel implements INorthwindCustomerLookupModel {
     id?: string | undefined;
     name?: string | undefined;
 
-    constructor(data?: ICustomerLookupModel) {
+    constructor(data?: INorthwindCustomerLookupModel) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -867,9 +867,9 @@ export class CustomerLookupModel implements ICustomerLookupModel {
         }
     }
 
-    static fromJS(data: any): CustomerLookupModel {
+    static fromJS(data: any): NorthwindCustomerLookupModel {
         data = typeof data === 'object' ? data : {};
-        let result = new CustomerLookupModel();
+        let result = new NorthwindCustomerLookupModel();
         result.init(data);
         return result;
     }
@@ -882,12 +882,12 @@ export class CustomerLookupModel implements ICustomerLookupModel {
     }
 }
 
-export interface ICustomerLookupModel {
+export interface INorthwindCustomerLookupModel {
     id?: string | undefined;
     name?: string | undefined;
 }
 
-export class CustomerDetailModel implements ICustomerDetailModel {
+export class NorthwindCustomerDetailModel implements INorthwindCustomerDetailModel {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -900,7 +900,7 @@ export class CustomerDetailModel implements ICustomerDetailModel {
     postalCode?: string | undefined;
     region?: string | undefined;
 
-    constructor(data?: ICustomerDetailModel) {
+    constructor(data?: INorthwindCustomerDetailModel) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -925,9 +925,9 @@ export class CustomerDetailModel implements ICustomerDetailModel {
         }
     }
 
-    static fromJS(data: any): CustomerDetailModel {
+    static fromJS(data: any): NorthwindCustomerDetailModel {
         data = typeof data === 'object' ? data : {};
-        let result = new CustomerDetailModel();
+        let result = new NorthwindCustomerDetailModel();
         result.init(data);
         return result;
     }
@@ -949,7 +949,7 @@ export class CustomerDetailModel implements ICustomerDetailModel {
     }
 }
 
-export interface ICustomerDetailModel {
+export interface INorthwindCustomerDetailModel {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -2027,7 +2027,7 @@ export interface ISupplier {
     products?: Product[] | undefined;
 }
 
-export class CreateCustomerCommand implements ICreateCustomerCommand {
+export class CreateNorthwindCustomerCommand implements ICreateNorthwindCustomerCommand {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -2040,7 +2040,7 @@ export class CreateCustomerCommand implements ICreateCustomerCommand {
     postalCode?: string | undefined;
     region?: string | undefined;
 
-    constructor(data?: ICreateCustomerCommand) {
+    constructor(data?: ICreateNorthwindCustomerCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -2065,9 +2065,9 @@ export class CreateCustomerCommand implements ICreateCustomerCommand {
         }
     }
 
-    static fromJS(data: any): CreateCustomerCommand {
+    static fromJS(data: any): CreateNorthwindCustomerCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new CreateCustomerCommand();
+        let result = new CreateNorthwindCustomerCommand();
         result.init(data);
         return result;
     }
@@ -2089,7 +2089,7 @@ export class CreateCustomerCommand implements ICreateCustomerCommand {
     }
 }
 
-export interface ICreateCustomerCommand {
+export interface ICreateNorthwindCustomerCommand {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -2103,7 +2103,7 @@ export interface ICreateCustomerCommand {
     region?: string | undefined;
 }
 
-export class UpdateCustomerCommand implements IUpdateCustomerCommand {
+export class UpdateNorthwindCustomerCommand implements IUpdateNorthwindCustomerCommand {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -2116,7 +2116,7 @@ export class UpdateCustomerCommand implements IUpdateCustomerCommand {
     postalCode?: string | undefined;
     region?: string | undefined;
 
-    constructor(data?: IUpdateCustomerCommand) {
+    constructor(data?: IUpdateNorthwindCustomerCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -2141,9 +2141,9 @@ export class UpdateCustomerCommand implements IUpdateCustomerCommand {
         }
     }
 
-    static fromJS(data: any): UpdateCustomerCommand {
+    static fromJS(data: any): UpdateNorthwindCustomerCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new UpdateCustomerCommand();
+        let result = new UpdateNorthwindCustomerCommand();
         result.init(data);
         return result;
     }
@@ -2165,7 +2165,7 @@ export class UpdateCustomerCommand implements IUpdateCustomerCommand {
     }
 }
 
-export interface IUpdateCustomerCommand {
+export interface IUpdateNorthwindCustomerCommand {
     id?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
@@ -2179,11 +2179,11 @@ export interface IUpdateCustomerCommand {
     region?: string | undefined;
 }
 
-export class ProductsListViewModel implements IProductsListViewModel {
+export class NorthwindProductsListViewModel implements INorthwindProductsListViewModel {
     products?: ProductDto[] | undefined;
     createEnabled?: boolean;
 
-    constructor(data?: IProductsListViewModel) {
+    constructor(data?: INorthwindProductsListViewModel) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -2203,9 +2203,9 @@ export class ProductsListViewModel implements IProductsListViewModel {
         }
     }
 
-    static fromJS(data: any): ProductsListViewModel {
+    static fromJS(data: any): NorthwindProductsListViewModel {
         data = typeof data === 'object' ? data : {};
-        let result = new ProductsListViewModel();
+        let result = new NorthwindProductsListViewModel();
         result.init(data);
         return result;
     }
@@ -2222,7 +2222,7 @@ export class ProductsListViewModel implements IProductsListViewModel {
     }
 }
 
-export interface IProductsListViewModel {
+export interface INorthwindProductsListViewModel {
     products?: ProductDto[] | undefined;
     createEnabled?: boolean;
 }
@@ -2363,14 +2363,14 @@ export interface IProductViewModel {
     deleteEnabled?: boolean;
 }
 
-export class CreateProductCommand implements ICreateProductCommand {
+export class CreateNorthwindProductCommand implements ICreateNorthwindProductCommand {
     productName?: string | undefined;
     unitPrice?: number | undefined;
     supplierId?: number | undefined;
     categoryId?: number | undefined;
     discontinued?: boolean;
 
-    constructor(data?: ICreateProductCommand) {
+    constructor(data?: ICreateNorthwindProductCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -2389,9 +2389,9 @@ export class CreateProductCommand implements ICreateProductCommand {
         }
     }
 
-    static fromJS(data: any): CreateProductCommand {
+    static fromJS(data: any): CreateNorthwindProductCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new CreateProductCommand();
+        let result = new CreateNorthwindProductCommand();
         result.init(data);
         return result;
     }
@@ -2407,7 +2407,7 @@ export class CreateProductCommand implements ICreateProductCommand {
     }
 }
 
-export interface ICreateProductCommand {
+export interface ICreateNorthwindProductCommand {
     productName?: string | undefined;
     unitPrice?: number | undefined;
     supplierId?: number | undefined;
@@ -2415,7 +2415,7 @@ export interface ICreateProductCommand {
     discontinued?: boolean;
 }
 
-export class UpdateProductCommand implements IUpdateProductCommand {
+export class UpdateNorthwindProductCommand implements IUpdateNorthwindProductCommand {
     productId?: number;
     productName?: string | undefined;
     unitPrice?: number | undefined;
@@ -2423,7 +2423,7 @@ export class UpdateProductCommand implements IUpdateProductCommand {
     categoryId?: number | undefined;
     discontinued?: boolean;
 
-    constructor(data?: IUpdateProductCommand) {
+    constructor(data?: IUpdateNorthwindProductCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -2443,9 +2443,9 @@ export class UpdateProductCommand implements IUpdateProductCommand {
         }
     }
 
-    static fromJS(data: any): UpdateProductCommand {
+    static fromJS(data: any): UpdateNorthwindProductCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new UpdateProductCommand();
+        let result = new UpdateNorthwindProductCommand();
         result.init(data);
         return result;
     }
@@ -2462,7 +2462,7 @@ export class UpdateProductCommand implements IUpdateProductCommand {
     }
 }
 
-export interface IUpdateProductCommand {
+export interface IUpdateNorthwindProductCommand {
     productId?: number;
     productName?: string | undefined;
     unitPrice?: number | undefined;

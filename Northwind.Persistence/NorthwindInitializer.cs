@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FleetControl.Domain.Entities;
+using Northwind.Domain.Entities;
 using FleetControl.Persistence.Extensions;
 
 namespace FleetControl.Persistence

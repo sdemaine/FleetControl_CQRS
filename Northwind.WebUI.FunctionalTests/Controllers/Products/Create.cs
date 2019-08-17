@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using FleetControl.Application.Commands.CreateProduct;
+using Northwind.Application.Commands.CreateProduct;
 using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
@@ -18,7 +18,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
         [Fact]
         public async Task GivenCreateProductCommand_ReturnsNewProductId()
         {
-            var command = new CreateProductCommand
+            var command = new CreateNorthwindProductCommand
             {
                 ProductName = "Coffee",
                 SupplierId = 1,

@@ -57,7 +57,7 @@
                   "nullable": true,
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/CustomersListViewModel"
+                      "$ref": "#/components/schemas/NorthwindCustomersListViewModel"
                     }
                   ]
                 }
@@ -76,7 +76,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateCustomerCommand"
+                "$ref": "#/components/schemas/CreateNorthwindCustomerCommand"
               }
             }
           },
@@ -132,7 +132,7 @@
                   "nullable": true,
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/CustomerDetailModel"
+                      "$ref": "#/components/schemas/NorthwindCustomerDetailModel"
                     }
                   ]
                 }
@@ -177,7 +177,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateCustomerCommand"
+                "$ref": "#/components/schemas/UpdateNorthwindCustomerCommand"
               }
             }
           },
@@ -311,7 +311,7 @@
                   "nullable": true,
                   "oneOf": [
                     {
-                      "$ref": "#/components/schemas/ProductsListViewModel"
+                      "$ref": "#/components/schemas/NorthwindProductsListViewModel"
                     }
                   ]
                 }
@@ -369,7 +369,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateProductCommand"
+                "$ref": "#/components/schemas/CreateNorthwindProductCommand"
               }
             }
           },
@@ -402,7 +402,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateProductCommand"
+                "$ref": "#/components/schemas/UpdateNorthwindProductCommand"
               }
             }
           },
@@ -518,7 +518,7 @@
           }
         }
       },
-      "CustomersListViewModel": {
+      "NorthwindCustomersListViewModel": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -526,12 +526,12 @@
             "type": "array",
             "nullable": true,
             "items": {
-              "$ref": "#/components/schemas/CustomerLookupModel"
+              "$ref": "#/components/schemas/NorthwindCustomerLookupModel"
             }
           }
         }
       },
-      "CustomerLookupModel": {
+      "NorthwindCustomerLookupModel": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -545,7 +545,7 @@
           }
         }
       },
-      "CustomerDetailModel": {
+      "NorthwindCustomerDetailModel": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1294,7 +1294,7 @@
           }
         }
       },
-      "CreateCustomerCommand": {
+      "CreateNorthwindCustomerCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1344,7 +1344,7 @@
           }
         }
       },
-      "UpdateCustomerCommand": {
+      "UpdateNorthwindCustomerCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1394,7 +1394,7 @@
           }
         }
       },
-      "ProductsListViewModel": {
+      "NorthwindProductsListViewModel": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1496,7 +1496,7 @@
           }
         }
       },
-      "CreateProductCommand": {
+      "CreateNorthwindProductCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1524,7 +1524,7 @@
           }
         }
       },
-      "UpdateProductCommand": {
+      "UpdateNorthwindProductCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {

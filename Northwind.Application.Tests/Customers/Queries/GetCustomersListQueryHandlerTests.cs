@@ -2,6 +2,7 @@
 using FleetControl.Application.Queries.GetCustomerList;
 using FleetControl.Application.Tests.Infrastructure;
 using FleetControl.Persistence;
+using Northwind.Application.Queries.GetCustomerList;
 using Shouldly;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,11 +25,11 @@ namespace FleetControlTraders.Application.UnitTests.Infrastructure
         [Fact]
         public async Task GetCustomersTest()
         {
-            var sut = new GetCustomersListQueryHandler(_context, _mapper);
+            var sut = new GetNorthwindCustomersListQueryHandler(_context, _mapper);
 
-            var result = await sut.Handle(new GetCustomersListQuery(), CancellationToken.None);
+            var result = await sut.Handle(new GetNorthwindCustomersListQuery(), CancellationToken.None);
 
-            result.ShouldBeOfType<CustomersListViewModel>();
+            result.ShouldBeOfType<NorthwindCustomersListViewModel>();
 
             result.Customers.Count.ShouldBe(3);
         }

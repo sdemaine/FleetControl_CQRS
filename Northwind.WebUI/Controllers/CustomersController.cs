@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using FleetControl.Application.Commands.CreateCustomer;
-using FleetControl.Application.Commands.DeleteCustomer;
-using FleetControl.Application.Commands.UpdateCustomer;
-using FleetControl.Application.Queries.GetCustomerDetail;
-using FleetControl.Application.Queries.GetCustomerList;
-using FleetControl.Application.Queries.Orders.GetCustomerOrders;
+using Northwind.Application.Commands.CreateCustomer;
+using Northwind.Application.Commands.DeleteCustomer;
+using Northwind.Application.Commands.UpdateCustomer;
+using Northwind.Application.Queries.GetCustomerDetail;
+using Northwind.Application.Queries.GetCustomerList;
+using Northwind.Application.Queries.Orders.GetCustomerOrders;
 using System.Threading.Tasks;
 
 namespace FleetControl.WebUI.Controllers
@@ -15,17 +15,17 @@ namespace FleetControl.WebUI.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<CustomersListViewModel>> GetAll()
+        public async Task<ActionResult<NorthwindCustomersListViewModel>> GetAll()
         {
-            return Ok(await Mediator.Send(new GetCustomersListQuery()));
+            return Ok(await Mediator.Send(new GetNorthwindCustomersListQuery()));
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<CustomerDetailModel>> Get(string id)
+        public async Task<ActionResult<NorthwindCustomerDetailModel>> Get(string id)
         {
-            return Ok(await Mediator.Send(new GetCustomerDetailQuery { Id = id }));
+            return Ok(await Mediator.Send(new GetNorthwindCustomerDetailQuery { Id = id }));
         }
 
         [HttpGet]
@@ -40,7 +40,7 @@ namespace FleetControl.WebUI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
-        public async Task<IActionResult> Create([FromBody]CreateCustomerCommand command)
+        public async Task<IActionResult> Create([FromBody]CreateNorthwindCustomerCommand command)
         {
             await Mediator.Send(command);
 
@@ -50,7 +50,7 @@ namespace FleetControl.WebUI.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Update([FromBody]UpdateCustomerCommand command)
+        public async Task<IActionResult> Update([FromBody]UpdateNorthwindCustomerCommand command)
         {
             await Mediator.Send(command);
 
@@ -62,7 +62,7 @@ namespace FleetControl.WebUI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(string id)
         {
-            await Mediator.Send(new DeleteCustomerCommand { Id = id });
+            await Mediator.Send(new DeleteNorthwindCustomerCommand { Id = id });
 
             return NoContent();
         }
