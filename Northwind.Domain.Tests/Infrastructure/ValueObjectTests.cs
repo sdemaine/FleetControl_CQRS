@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Northwind.Domain.Infrastructure;
+using FleetControl.Domain.Infrastructure;
 using Xunit;
 
 namespace FleetControl.Domain.Tests.Infrastructure

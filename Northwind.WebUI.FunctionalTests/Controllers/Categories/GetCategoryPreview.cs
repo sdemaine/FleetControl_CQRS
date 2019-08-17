@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Northwind.Application.Queries.Models;
-using Northwind.WebUI.FunctionalTests.Common;
+using FleetControl.Application.Queries.Models;
+using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
 namespace FleetControl.WebUI.FunctionalTests.Controllers.Categories

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Northwind.Persistence.Infrastructure;
+using FleetControl.Persistence.Infrastructure;
 
 namespace FleetControl.Persistence
 {

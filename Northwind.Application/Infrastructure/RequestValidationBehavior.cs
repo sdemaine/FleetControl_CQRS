@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ValidationException = Northwind.Application.Exceptions.ValidationException;
+using ValidationException = FleetControl.Application.Exceptions.ValidationException;
 
 namespace FleetControl.Application.Infrastructure
 {

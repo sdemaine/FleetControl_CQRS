@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Northwind.Application.Queries.Category;
-using Northwind.Application.Queries.Models;
+using FleetControl.Application.Queries.Category;
+using FleetControl.Application.Queries.Models;
 
 namespace FleetControl.WebUI.Controllers
 {

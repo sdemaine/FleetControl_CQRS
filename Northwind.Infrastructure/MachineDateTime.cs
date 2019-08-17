@@ -1,5 +1,5 @@
 ﻿using System;
-using Northwind.Common;
+using FleetControl.Common;
 
 namespace FleetControl.Infrastructure
 {

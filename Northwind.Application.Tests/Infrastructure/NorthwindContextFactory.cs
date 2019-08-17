@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Domain.Entities;
-using Northwind.Persistence;
+using FleetControl.Domain.Entities;
+using FleetControl.Persistence;
 
 namespace FleetControl.Application.Tests.Infrastructure
 {

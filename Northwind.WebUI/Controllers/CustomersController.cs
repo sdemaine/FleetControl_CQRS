@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Northwind.Application.Commands.CreateCustomer;
-using Northwind.Application.Commands.DeleteCustomer;
-using Northwind.Application.Commands.UpdateCustomer;
-using Northwind.Application.Queries.GetCustomerDetail;
-using Northwind.Application.Queries.GetCustomerList;
-using Northwind.Application.Queries.Orders.GetCustomerOrders;
+using FleetControl.Application.Commands.CreateCustomer;
+using FleetControl.Application.Commands.DeleteCustomer;
+using FleetControl.Application.Commands.UpdateCustomer;
+using FleetControl.Application.Queries.GetCustomerDetail;
+using FleetControl.Application.Queries.GetCustomerList;
+using FleetControl.Application.Queries.Orders.GetCustomerOrders;
 using System.Threading.Tasks;
 
 namespace FleetControl.WebUI.Controllers

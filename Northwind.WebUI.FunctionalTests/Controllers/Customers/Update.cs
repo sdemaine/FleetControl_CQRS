@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Northwind.Application.Commands.UpdateCustomer;
-using Northwind.WebUI.FunctionalTests.Common;
+using FleetControl.Application.Commands.UpdateCustomer;
+using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
 namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers

@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application.Commands\Northwind.Application.Commands.csproj" />
-    <ProjectReference Include="..\Northwind.Application.Queries\Northwind.Application.Queries.csproj" />
-    <ProjectReference Include="..\Northwind.Application\Northwind.Application.csproj" />
+    <ProjectReference Include="..\Northwind.Application.Commands\FleetControl.Application.Commands.csproj" />
+    <ProjectReference Include="..\Northwind.Application.Queries\FleetControl.Application.Queries.csproj" />
+    <ProjectReference Include="..\Northwind.Application\FleetControl.Application.csproj" />
     <ProjectReference Include="..\Northwind.Persistence\Northwind.Persistence.csproj" />
   </ItemGroup>
 

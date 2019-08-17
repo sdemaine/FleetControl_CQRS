@@ -9,8 +9,8 @@ using Dapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Northwind.Application.Interfaces;
-using Northwind.Infrastructure;
+using FleetControl.Application.Interfaces;
+using FleetControl.Infrastructure;
 
 namespace FleetControl.Application.Queries.GetAllProducts
 {

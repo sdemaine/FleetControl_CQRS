@@ -1,4 +1,4 @@
-﻿using Northwind.Domain.ValueObjects;
+﻿using FleetControl.Domain.ValueObjects;
 
 namespace FleetControl.Domain.Entities
 {

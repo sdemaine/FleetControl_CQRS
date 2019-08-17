@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Reflection;
-using Northwind.Application;
+using FleetControl.Application;
 using System.Linq;
 
 namespace FleetControl.Application.Infrastructure.AutoMapper

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Northwind.Domain.Entities;
+using FleetControl.Domain.Entities;
 
 namespace FleetControl.Application.Queries.Models
 {
@@ -21,7 +21,7 @@ namespace FleetControl.Application.Queries.Models
 
         public ICollection<ProductPreviewDto> Products { get; set; }
 
-        public static Expression<Func<Northwind.Domain.Entities.Category, CategoryPreviewDto>> Projection
+        public static Expression<Func<FleetControl.Domain.Entities.Category, CategoryPreviewDto>> Projection
         {
             get
             {

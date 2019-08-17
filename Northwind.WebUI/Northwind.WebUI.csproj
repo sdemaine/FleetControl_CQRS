@@ -36,8 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application.Commands\Northwind.Application.Commands.csproj" />
-    <ProjectReference Include="..\Northwind.Application.Queries\Northwind.Application.Queries.csproj" />
+    <ProjectReference Include="..\Northwind.Application.Commands\FleetControl.Application.Commands.csproj" />
+    <ProjectReference Include="..\Northwind.Application.Queries\FleetControl.Application.Queries.csproj" />
     <ProjectReference Include="..\Northwind.Common\Northwind.Common.csproj" />
     <ProjectReference Include="..\Northwind.Infrastructure\Northwind.Infrastructure.csproj" />
     <ProjectReference Include="..\Northwind.Persistence\Northwind.Persistence.csproj" />

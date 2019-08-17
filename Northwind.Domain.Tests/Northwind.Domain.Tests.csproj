@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Domain\Northwind.Domain.csproj" />
+    <ProjectReference Include="..\Northwind.Domain\FleetControl.Domain.csproj" />
   </ItemGroup>
 
 </Project>

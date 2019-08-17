@@ -1,5 +1,5 @@
-using Northwind.Domain.Exceptions;
-using Northwind.Domain.ValueObjects;
+using FleetControl.Domain.Exceptions;
+using FleetControl.Domain.ValueObjects;
 using Xunit;
 
 namespace FleetControl.Domain.Tests.ValueObjects

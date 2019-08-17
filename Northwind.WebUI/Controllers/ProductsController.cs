@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Northwind.Application.Queries.GetProduct;
-using Northwind.Application.Commands.CreateProduct;
-using Northwind.Application.Commands.UpdateProduct;
-using Northwind.Application.Commands.DeleteProduct;
-using Northwind.Application.Queries.GetAllProducts;
+using FleetControl.Application.Queries.GetProduct;
+using FleetControl.Application.Commands.CreateProduct;
+using FleetControl.Application.Commands.UpdateProduct;
+using FleetControl.Application.Commands.DeleteProduct;
+using FleetControl.Application.Queries.GetAllProducts;
 
 namespace FleetControl.WebUI.Controllers
 {

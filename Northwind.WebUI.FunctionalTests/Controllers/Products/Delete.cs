@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Northwind.WebUI.FunctionalTests.Common;
+using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
 namespace FleetControl.WebUI.FunctionalTests.Controllers.Products

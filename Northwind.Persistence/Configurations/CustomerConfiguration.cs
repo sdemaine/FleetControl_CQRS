@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Northwind.Domain.Entities;
+using FleetControl.Domain.Entities;
 
 namespace FleetControl.Persistence.Configurations
 {

@@ -1,4 +1,4 @@
-﻿using Northwind.Application.Notifications.Models;
+﻿using FleetControl.Application.Notifications.Models;
 using System.Threading.Tasks;
 
 namespace FleetControl.Application.Interfaces

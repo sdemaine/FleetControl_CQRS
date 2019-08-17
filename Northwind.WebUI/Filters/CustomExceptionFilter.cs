@@ -2,7 +2,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Northwind.Application.Exceptions;
+using FleetControl.Application.Exceptions;
 
 namespace FleetControl.WebUI.Filters
 {

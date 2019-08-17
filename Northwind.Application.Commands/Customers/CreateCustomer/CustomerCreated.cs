@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using Northwind.Application.Interfaces;
-using Northwind.Application.Notifications.Models;
+using FleetControl.Application.Interfaces;
+using FleetControl.Application.Notifications.Models;
 using System.Threading;
 using System.Threading.Tasks;
 

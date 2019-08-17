@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Northwind.Application.Queries.GetCustomerList;
-using Northwind.Application.Tests.Infrastructure;
-using Northwind.Persistence;
+using FleetControl.Application.Queries.GetCustomerList;
+using FleetControl.Application.Tests.Infrastructure;
+using FleetControl.Persistence;
 using Shouldly;
 using System.Threading;
 using System.Threading.Tasks;

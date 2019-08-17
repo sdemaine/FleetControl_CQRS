@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Northwind.Application.Infrastructure.AutoMapper;
+using FleetControl.Application.Infrastructure.AutoMapper;
 
 namespace FleetControl.Application.Tests.Infrastructure
 {

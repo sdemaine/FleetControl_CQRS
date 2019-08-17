@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Northwind.Persistence;
+using FleetControl.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
-using Northwind.Application.Interfaces;
+using FleetControl.Application.Interfaces;
 
 namespace FleetControl.WebUI
 {

@@ -1,6 +1,6 @@
 using System;
 using AutoMapper;
-using Northwind.Persistence;
+using FleetControl.Persistence;
 using Xunit;
 
 namespace FleetControl.Application.Tests.Infrastructure

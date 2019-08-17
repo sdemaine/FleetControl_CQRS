@@ -1,8 +1,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Northwind.Application.Queries.GetCustomerDetail;
-using Northwind.WebUI.FunctionalTests.Common;
+using FleetControl.Application.Queries.GetCustomerDetail;
+using FleetControl.WebUI.FunctionalTests.Common;
 using Xunit;
 
 namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers

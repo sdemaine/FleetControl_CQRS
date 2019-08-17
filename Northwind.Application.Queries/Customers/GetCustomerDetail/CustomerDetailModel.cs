@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Northwind.Domain.Entities;
+using FleetControl.Domain.Entities;
 
 namespace FleetControl.Application.Queries.GetCustomerDetail
 {

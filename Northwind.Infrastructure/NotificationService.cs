@@ -1,5 +1,5 @@
-﻿using Northwind.Application.Interfaces;
-using Northwind.Application.Notifications.Models;
+﻿using FleetControl.Application.Interfaces;
+using FleetControl.Application.Notifications.Models;
 using System.Threading.Tasks;
 
 namespace FleetControl.Infrastructure

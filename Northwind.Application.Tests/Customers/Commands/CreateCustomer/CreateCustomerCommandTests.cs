@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Moq;
-using Northwind.Application.Commands.CreateCustomer;
-using Northwind.Application.Tests.Infrastructure;
+using FleetControl.Application.Commands.CreateCustomer;
+using FleetControl.Application.Tests.Infrastructure;
 using System.Threading;
 using Xunit;
 

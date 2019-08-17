@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C11584
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Common", "Northwind.Common\Northwind.Common.csproj", "{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Domain", "Northwind.Domain\Northwind.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Domain", "Northwind.Domain\FleetControl.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Application", "Northwind.Application\Northwind.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application", "Northwind.Application\FleetControl.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Application.Tests", "Northwind.Application.Tests\Northwind.Application.Tests.csproj", "{C379031A-C615-4F06-BBAB-B27196335FB4}"
 EndProject
@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI", "Northwin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI.FunctionalTests", "Northwind.WebUI.FunctionalTests\Northwind.WebUI.FunctionalTests.csproj", "{A5A16118-2C05-4433-8C39-384AB81E07CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Application.Commands", "Northwind.Application.Commands\Northwind.Application.Commands.csproj", "{4929862A-1A77-4BD6-9010-3FB43D4C8008}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Commands", "Northwind.Application.Commands\FleetControl.Application.Commands.csproj", "{4929862A-1A77-4BD6-9010-3FB43D4C8008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Application.Queries", "Northwind.Application.Queries\Northwind.Application.Queries.csproj", "{C5313DE3-DAB0-45C3-A78B-6555AF188C44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Queries", "Northwind.Application.Queries\FleetControl.Application.Queries.csproj", "{C5313DE3-DAB0-45C3-A78B-6555AF188C44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetControl.Core", "FleetControl.Core\FleetControl.Core.csproj", "{807E704F-1AF0-4FB2-94F4-41C1823274F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{C5313DE3-DAB0-45C3-A78B-6555AF188C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5313DE3-DAB0-45C3-A78B-6555AF188C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5313DE3-DAB0-45C3-A78B-6555AF188C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{A5A16118-2C05-4433-8C39-384AB81E07CA} = {9FEDAEFB-297C-4201-8FAA-F502F94CAFED}
 		{4929862A-1A77-4BD6-9010-3FB43D4C8008} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
 		{C5313DE3-DAB0-45C3-A78B-6555AF188C44} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
+		{807E704F-1AF0-4FB2-94F4-41C1823274F8} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D5D0CA3-C6B8-436C-82B0-39820C8A13FA}

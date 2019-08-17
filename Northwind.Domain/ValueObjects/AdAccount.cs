@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Northwind.Domain.Exceptions;
-using Northwind.Domain.Infrastructure;
+using FleetControl.Domain.Exceptions;
+using FleetControl.Domain.Infrastructure;
 
 namespace FleetControl.Domain.ValueObjects
 {

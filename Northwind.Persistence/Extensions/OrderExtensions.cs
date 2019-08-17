@@ -1,4 +1,4 @@
-﻿using Northwind.Domain.Entities;
+﻿using FleetControl.Domain.Entities;
 
 namespace FleetControl.Persistence.Extensions
 {

@@ -10,9 +10,9 @@ using Dapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Northwind.Application.Interfaces;
-using Northwind.Domain.Entities;
-using Northwind.Infrastructure;
+using FleetControl.Application.Interfaces;
+using FleetControl.Domain.Entities;
+using FleetControl.Infrastructure;
 
 namespace FleetControl.Application.Queries.Orders.GetCustomerOrders
 {

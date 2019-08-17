@@ -4,8 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Northwind.Application.Interfaces;
-using Northwind.Application.Queries.Models;
+using FleetControl.Application.Interfaces;
+using FleetControl.Application.Queries.Models;
 
 namespace FleetControl.Application.Queries.Category
 {

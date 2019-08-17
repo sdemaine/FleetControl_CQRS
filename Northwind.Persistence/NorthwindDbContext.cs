@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Northwind.Application.Interfaces;
-using Northwind.Domain.Entities;
+using FleetControl.Application.Interfaces;
+using FleetControl.Domain.Entities;
 
 namespace FleetControl.Persistence
 {

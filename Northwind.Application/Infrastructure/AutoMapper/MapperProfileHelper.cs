@@ -1,4 +1,4 @@
-﻿using Northwind.Application.Interfaces.Mapping;
+﻿using FleetControl.Application.Interfaces.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;

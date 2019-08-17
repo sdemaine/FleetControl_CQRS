@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Northwind.Persistence;
+using FleetControl.Persistence;
 
 namespace FleetControl.WebUI.FunctionalTests.Common
 {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FleetControl.Persistence.Migrations
 {
-    public partial class InitialCreate : Migration
+    public class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

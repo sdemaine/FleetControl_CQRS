@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Northwind.Application.Interfaces;
-using Northwind.Persistence;
+using FleetControl.Application.Interfaces;
+using FleetControl.Persistence;
 
 namespace FleetControl.WebUI.FunctionalTests.Common
 {

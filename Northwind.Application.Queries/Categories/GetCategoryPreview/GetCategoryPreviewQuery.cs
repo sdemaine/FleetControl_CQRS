@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using MediatR;
-using Northwind.Application.Queries.Models;
+using FleetControl.Application.Queries.Models;
 
 namespace FleetControl.Application.Queries.Category
 {

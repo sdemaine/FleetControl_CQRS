@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Northwind.Application.Interfaces.Mapping;
-using Northwind.Domain.Entities;
+using FleetControl.Application.Interfaces.Mapping;
+using FleetControl.Domain.Entities;
 
 namespace FleetControl.Application.Queries.GetProduct
 {

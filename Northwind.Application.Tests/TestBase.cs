@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using Northwind.Persistence;
+using FleetControl.Persistence;
 
 namespace FleetControl.Application.Tests
 {

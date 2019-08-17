@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FleetControl.Persistence.Migrations
 {
-    public partial class User : Migration
+    public class User : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
