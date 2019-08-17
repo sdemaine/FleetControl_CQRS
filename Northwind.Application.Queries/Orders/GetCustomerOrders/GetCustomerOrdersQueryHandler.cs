@@ -14,7 +14,7 @@ using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 using Northwind.Infrastructure;
 
-namespace Northwind.Application.Queries.Orders.GetCustomerOrders
+namespace FleetControl.Application.Queries.Orders.GetCustomerOrders
 {
     public class GetCustomerOrdersQueryHandler : IRequestHandler<GetCustomerOrdersQuery, CustomerOrderListViewModel>
     {

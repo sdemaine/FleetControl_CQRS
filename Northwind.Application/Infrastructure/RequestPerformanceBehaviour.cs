@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Northwind.Application.Infrastructure
+namespace FleetControl.Application.Infrastructure
 {
     public class RequestPerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

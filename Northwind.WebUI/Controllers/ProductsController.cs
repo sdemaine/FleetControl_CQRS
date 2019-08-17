@@ -7,7 +7,7 @@ using Northwind.Application.Commands.UpdateProduct;
 using Northwind.Application.Commands.DeleteProduct;
 using Northwind.Application.Queries.GetAllProducts;
 
-namespace Northwind.WebUI.Controllers
+namespace FleetControl.WebUI.Controllers
 {
     public class ProductsController : BaseController
     {

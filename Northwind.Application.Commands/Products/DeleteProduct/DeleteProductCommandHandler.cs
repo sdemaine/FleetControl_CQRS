@@ -6,7 +6,7 @@ using Northwind.Application.Exceptions;
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Commands.DeleteProduct
+namespace FleetControl.Application.Commands.DeleteProduct
 {
     public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand>
     {

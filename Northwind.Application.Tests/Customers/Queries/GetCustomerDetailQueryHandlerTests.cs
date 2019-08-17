@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Northwind.Application.Tests.Customers.Queries
+namespace FleetControl.Application.Tests.Customers.Queries
 {
     [Collection("QueryCollection")]
     public class GetCustomerDetailQueryHandlerTests

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Northwind.Application.Queries.GetCustomerList
+namespace FleetControl.Application.Queries.GetCustomerList
 {
     public class CustomersListViewModel
     {

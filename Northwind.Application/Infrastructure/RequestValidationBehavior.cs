@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ValidationException = Northwind.Application.Exceptions.ValidationException;
 
-namespace Northwind.Application.Infrastructure
+namespace FleetControl.Application.Infrastructure
 {
     public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

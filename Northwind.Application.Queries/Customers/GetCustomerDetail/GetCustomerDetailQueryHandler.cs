@@ -5,7 +5,7 @@ using Northwind.Application.Exceptions;
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.GetCustomerDetail
+namespace FleetControl.Application.Queries.GetCustomerDetail
 {
     public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQuery, CustomerDetailModel>
     {

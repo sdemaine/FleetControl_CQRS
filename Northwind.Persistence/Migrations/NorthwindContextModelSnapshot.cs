@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Northwind.Persistence.Migrations
+namespace FleetControl.Persistence.Migrations
 {
     [DbContext(typeof(NorthwindDbContext))]
     partial class NorthwindContextModelSnapshot : ModelSnapshot

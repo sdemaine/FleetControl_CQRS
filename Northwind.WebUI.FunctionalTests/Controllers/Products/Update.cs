@@ -5,7 +5,7 @@ using Northwind.Application.Commands.UpdateProduct;
 using Northwind.WebUI.FunctionalTests.Common;
 using Xunit;
 
-namespace Northwind.WebUI.FunctionalTests.Controllers.Products
+namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
 {
     public class Update : IClassFixture<CustomWebApplicationFactory<Startup>>
     {

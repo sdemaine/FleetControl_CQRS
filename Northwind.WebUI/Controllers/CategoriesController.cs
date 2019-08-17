@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Northwind.Application.Queries.Category;
 using Northwind.Application.Queries.Models;
 
-namespace Northwind.WebUI.Controllers
+namespace FleetControl.WebUI.Controllers
 {
     public class CategoriesController : BaseController
     {

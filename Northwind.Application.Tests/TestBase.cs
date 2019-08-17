@@ -2,7 +2,7 @@
 using System;
 using Northwind.Persistence;
 
-namespace Northwind.Application.Tests
+namespace FleetControl.Application.Tests
 {
     public class TestBase
     {

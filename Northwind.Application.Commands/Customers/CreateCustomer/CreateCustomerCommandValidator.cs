@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Northwind.Application.Commands.CreateCustomer
+namespace FleetControl.Application.Commands.CreateCustomer
 {
     public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
     {

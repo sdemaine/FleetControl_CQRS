@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Persistence.Configurations
+namespace FleetControl.Persistence.Configurations
 {
     public class TerritoryConfiguration : IEntityTypeConfiguration<Territory>
     {

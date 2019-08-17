@@ -6,7 +6,7 @@ using Northwind.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Commands.UpdateCustomer
+namespace FleetControl.Application.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommand : IRequest
     {

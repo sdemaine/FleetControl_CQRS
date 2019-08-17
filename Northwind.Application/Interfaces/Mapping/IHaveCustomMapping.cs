@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Northwind.Application.Interfaces.Mapping
+namespace FleetControl.Application.Interfaces.Mapping
 {
     public interface IHaveCustomMapping
     {

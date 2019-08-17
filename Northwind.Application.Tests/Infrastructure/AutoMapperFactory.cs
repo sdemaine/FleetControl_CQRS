@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Northwind.Application.Infrastructure.AutoMapper;
 
-namespace Northwind.Application.Tests.Infrastructure
+namespace FleetControl.Application.Tests.Infrastructure
 {
     public static class AutoMapperFactory
     {

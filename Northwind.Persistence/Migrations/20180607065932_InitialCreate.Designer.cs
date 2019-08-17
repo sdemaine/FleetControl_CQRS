@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Northwind.Domain;
 
-namespace Northwind.Persistence.Migrations
+namespace FleetControl.Persistence.Migrations
 {
     [DbContext(typeof(NorthwindDbContext))]
     [Migration("20180607065932_InitialCreate")]

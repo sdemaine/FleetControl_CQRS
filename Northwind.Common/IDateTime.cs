@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Northwind.Common
+namespace FleetControl.Common
 {
     public interface IDateTime
     {

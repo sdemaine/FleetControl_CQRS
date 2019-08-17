@@ -1,4 +1,4 @@
-﻿namespace Northwind.Domain.Entities
+﻿namespace FleetControl.Domain.Entities
 {
     public class OrderDetail
     {

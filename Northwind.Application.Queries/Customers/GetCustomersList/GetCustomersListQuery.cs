@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Northwind.Application.Queries.GetCustomerList
+namespace FleetControl.Application.Queries.GetCustomerList
 {
     public class GetCustomersListQuery : IRequest<CustomersListViewModel>
     {

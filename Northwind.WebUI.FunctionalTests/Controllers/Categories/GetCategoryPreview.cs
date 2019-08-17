@@ -5,7 +5,7 @@ using Northwind.Application.Queries.Models;
 using Northwind.WebUI.FunctionalTests.Common;
 using Xunit;
 
-namespace Northwind.WebUI.FunctionalTests.Controllers.Categories
+namespace FleetControl.WebUI.FunctionalTests.Controllers.Categories
 {
     public class GetCategoryPreview : IClassFixture<CustomWebApplicationFactory<Startup>>
     {

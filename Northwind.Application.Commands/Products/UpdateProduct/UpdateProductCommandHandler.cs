@@ -5,7 +5,7 @@ using Northwind.Application.Exceptions;
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Commands.UpdateProduct
+namespace FleetControl.Application.Commands.UpdateProduct
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, Unit>
     {

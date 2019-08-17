@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Northwind.Persistence;
 
-namespace Northwind.WebUI.FunctionalTests.Common
+namespace FleetControl.WebUI.FunctionalTests.Common
 {
     public class Utilities
     { 

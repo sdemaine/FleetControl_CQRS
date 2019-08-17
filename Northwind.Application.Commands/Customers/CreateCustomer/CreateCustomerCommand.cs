@@ -4,7 +4,7 @@ using MediatR;
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Commands.CreateCustomer
+namespace FleetControl.Application.Commands.CreateCustomer
 {
     public class CreateCustomerCommand : IRequest
     {

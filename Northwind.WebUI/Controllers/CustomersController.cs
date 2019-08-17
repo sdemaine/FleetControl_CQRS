@@ -8,7 +8,7 @@ using Northwind.Application.Queries.GetCustomerList;
 using Northwind.Application.Queries.Orders.GetCustomerOrders;
 using System.Threading.Tasks;
 
-namespace Northwind.WebUI.Controllers
+namespace FleetControl.WebUI.Controllers
 {
     [Route("api/Customers")]
     public class CustomersController : BaseController

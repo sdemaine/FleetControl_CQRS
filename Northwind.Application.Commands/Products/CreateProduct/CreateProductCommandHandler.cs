@@ -4,7 +4,7 @@ using MediatR;
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Commands.CreateProduct
+namespace FleetControl.Application.Commands.CreateProduct
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.Models
+namespace FleetControl.Application.Queries.Models
 {
     public class CategoryPreviewDto
     {

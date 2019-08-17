@@ -2,7 +2,7 @@
 using Northwind.Domain.Infrastructure;
 using Xunit;
 
-namespace Northwind.Domain.Tests.Infrastructure
+namespace FleetControl.Domain.Tests.Infrastructure
 {
     public class ValueObjectTests
     {

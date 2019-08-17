@@ -2,7 +2,7 @@
 using Northwind.Application.Notifications.Models;
 using System.Threading.Tasks;
 
-namespace Northwind.Infrastructure
+namespace FleetControl.Infrastructure
 {
     public class NotificationService : INotificationService
     {

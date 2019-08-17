@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Northwind.Domain.Entities
+namespace FleetControl.Domain.Entities
 {
     public class Employee
     {

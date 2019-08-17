@@ -6,7 +6,7 @@ using Northwind.Application.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Queries.GetCustomerList
+namespace FleetControl.Application.Queries.GetCustomerList
 {
     public class GetCustomersListQueryHandler : IRequestHandler<GetCustomersListQuery, CustomersListViewModel>
     {

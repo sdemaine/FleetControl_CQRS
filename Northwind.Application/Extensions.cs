@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Northwind.Application
+namespace FleetControl.Application
 {
     public static class Extensions
     {

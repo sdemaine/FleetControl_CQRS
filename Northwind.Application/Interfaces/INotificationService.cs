@@ -1,7 +1,7 @@
 ﻿using Northwind.Application.Notifications.Models;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Interfaces
+namespace FleetControl.Application.Interfaces
 {
     public interface INotificationService
     {

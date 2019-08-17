@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 
-namespace Northwind.Application.Infrastructure
+namespace FleetControl.Application.Infrastructure
 {
     public class RequestLogger<TRequest> : IRequestPreProcessor<TRequest>
     {

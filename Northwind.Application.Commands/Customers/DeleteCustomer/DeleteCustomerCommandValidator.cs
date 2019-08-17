@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Northwind.Application.Commands.DeleteCustomer
+namespace FleetControl.Application.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandValidator : AbstractValidator<DeleteCustomerCommand>
     {

@@ -3,7 +3,7 @@ using Northwind.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Interfaces
+namespace FleetControl.Application.Interfaces
 {
     public interface INorthwindDbContext
     {

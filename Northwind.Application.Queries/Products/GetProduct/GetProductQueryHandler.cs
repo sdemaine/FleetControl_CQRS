@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Queries.GetProduct
+namespace FleetControl.Application.Queries.GetProduct
 {
     public class GetProductQueryHandler : MediatR.IRequestHandler<GetProductQuery, ProductViewModel>
     {

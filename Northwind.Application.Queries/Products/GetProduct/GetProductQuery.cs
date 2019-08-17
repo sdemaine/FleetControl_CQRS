@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Northwind.Application.Queries.GetProduct
+namespace FleetControl.Application.Queries.GetProduct
 {
     public class GetProductQuery : IRequest<ProductViewModel>
     {

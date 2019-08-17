@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Northwind.Application.Commands.UpdateProduct
+namespace FleetControl.Application.Commands.UpdateProduct
 {
     public class UpdateProductCommand : IRequest
     {

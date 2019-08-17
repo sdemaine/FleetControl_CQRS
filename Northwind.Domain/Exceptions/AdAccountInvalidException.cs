@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Northwind.Domain.Exceptions
+namespace FleetControl.Domain.Exceptions
 {
     public class AdAccountInvalidException : Exception
     {

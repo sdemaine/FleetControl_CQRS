@@ -4,7 +4,7 @@ using AutoMapper;
 using Northwind.Application.Interfaces.Mapping;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.GetAllProducts
+namespace FleetControl.Application.Queries.GetAllProducts
 {
     public class ProductDto : IHaveCustomMapping
     {

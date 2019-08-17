@@ -5,7 +5,7 @@ using Northwind.Application.Queries.GetCustomerDetail;
 using Northwind.WebUI.FunctionalTests.Common;
 using Xunit;
 
-namespace Northwind.WebUI.FunctionalTests.Controllers.Customers
+namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
 {
     public class GetById : IClassFixture<CustomWebApplicationFactory<Startup>>
     {

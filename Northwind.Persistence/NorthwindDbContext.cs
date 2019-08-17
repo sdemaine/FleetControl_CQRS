@@ -2,7 +2,7 @@
 using Northwind.Application.Interfaces;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Persistence
+namespace FleetControl.Persistence
 {
     public class NorthwindDbContext : DbContext, INorthwindDbContext
     {

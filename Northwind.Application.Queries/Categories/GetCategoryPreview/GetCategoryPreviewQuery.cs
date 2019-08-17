@@ -2,7 +2,7 @@
 using MediatR;
 using Northwind.Application.Queries.Models;
 
-namespace Northwind.Application.Queries.Category
+namespace FleetControl.Application.Queries.Category
 {
     public class GetCategoryPreviewQuery : IRequest<List<CategoryPreviewDto>>
     {

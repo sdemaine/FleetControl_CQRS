@@ -4,7 +4,7 @@ using System.Reflection;
 using Northwind.Application;
 using System.Linq;
 
-namespace Northwind.Application.Infrastructure.AutoMapper
+namespace FleetControl.Application.Infrastructure.AutoMapper
 {
     public class AutoMapperProfile : Profile
     {

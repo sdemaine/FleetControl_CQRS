@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Northwind.Application.Interfaces;
 using Northwind.Application.Queries.Models;
 
-namespace Northwind.Application.Queries.Category
+namespace FleetControl.Application.Queries.Category
 {
     public class GetCategoryPreviewQueryHandler : IRequestHandler<GetCategoryPreviewQuery, List<CategoryPreviewDto>>
     {

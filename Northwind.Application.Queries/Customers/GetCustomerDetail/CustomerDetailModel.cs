@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.GetCustomerDetail
+namespace FleetControl.Application.Queries.GetCustomerDetail
 {
     public class CustomerDetailModel
     {

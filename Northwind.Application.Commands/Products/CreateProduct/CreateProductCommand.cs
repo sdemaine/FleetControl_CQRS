@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Northwind.Application.Commands.CreateProduct
+namespace FleetControl.Application.Commands.CreateProduct
 {
     public class CreateProductCommand : IRequest<int>
     {

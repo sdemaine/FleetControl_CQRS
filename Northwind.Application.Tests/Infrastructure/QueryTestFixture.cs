@@ -3,7 +3,7 @@ using AutoMapper;
 using Northwind.Persistence;
 using Xunit;
 
-namespace Northwind.Application.Tests.Infrastructure
+namespace FleetControl.Application.Tests.Infrastructure
 {
     public class QueryTestFixture : IDisposable
     {

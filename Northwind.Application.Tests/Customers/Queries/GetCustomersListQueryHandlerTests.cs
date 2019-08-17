@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace NorthwindTraders.Application.UnitTests.Infrastructure
+namespace FleetControlTraders.Application.UnitTests.Infrastructure
 {
     [Collection("QueryCollection")]
     public class GetCustomersListQueryHandlerTests

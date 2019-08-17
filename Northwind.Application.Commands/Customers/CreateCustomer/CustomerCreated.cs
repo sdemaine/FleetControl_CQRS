@@ -4,7 +4,7 @@ using Northwind.Application.Notifications.Models;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Commands.CreateCustomer
+namespace FleetControl.Application.Commands.CreateCustomer
 {
     public class CustomerCreated : INotification
     {

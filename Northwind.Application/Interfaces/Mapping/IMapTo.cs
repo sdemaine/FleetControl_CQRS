@@ -1,4 +1,4 @@
-﻿namespace Northwind.Application.Interfaces.Mapping
+﻿namespace FleetControl.Application.Interfaces.Mapping
 {
     public interface IMapTo<TEntity>
     {

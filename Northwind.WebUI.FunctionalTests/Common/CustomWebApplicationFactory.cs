@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Northwind.Application.Interfaces;
 using Northwind.Persistence;
 
-namespace Northwind.WebUI.FunctionalTests.Common
+namespace FleetControl.WebUI.FunctionalTests.Common
 {
     public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {

@@ -5,7 +5,7 @@ using Northwind.Application.Tests.Infrastructure;
 using System.Threading;
 using Xunit;
 
-namespace Northwind.Application.Tests.Customers.Commands.CreateCustomer
+namespace FleetControl.Application.Tests.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandTests : CommandTestBase
     {

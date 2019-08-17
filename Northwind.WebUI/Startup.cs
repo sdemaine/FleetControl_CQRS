@@ -22,7 +22,7 @@ using Northwind.WebUI.Filters;
 using NSwag.AspNetCore;
 using System.Reflection;
 
-namespace Northwind.WebUI
+namespace FleetControl.WebUI
 {
     public class Startup
     {

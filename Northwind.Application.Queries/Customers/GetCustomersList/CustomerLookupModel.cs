@@ -2,7 +2,7 @@
 using Northwind.Application.Interfaces.Mapping;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.GetCustomerList
+namespace FleetControl.Application.Queries.GetCustomerList
 {
     public class CustomerLookupModel : IHaveCustomMapping
     {

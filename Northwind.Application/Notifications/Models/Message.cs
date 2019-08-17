@@ -1,4 +1,4 @@
-﻿namespace Northwind.Application.Notifications.Models
+﻿namespace FleetControl.Application.Notifications.Models
 {
     public class Message
     {

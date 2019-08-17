@@ -8,7 +8,7 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using Northwind.Application.Interfaces;
 
-namespace Northwind.WebUI
+namespace FleetControl.WebUI
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 ﻿using Northwind.Domain.Entities;
 
-namespace Northwind.Persistence.Extensions
+namespace FleetControl.Persistence.Extensions
 {
     internal static class OrderExtensions
     {

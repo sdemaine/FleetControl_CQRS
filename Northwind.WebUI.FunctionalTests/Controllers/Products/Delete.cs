@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Northwind.WebUI.FunctionalTests.Common;
 using Xunit;
 
-namespace Northwind.WebUI.FunctionalTests.Controllers.Products
+namespace FleetControl.WebUI.FunctionalTests.Controllers.Products
 {
     public class Delete : IClassFixture<CustomWebApplicationFactory<Startup>>
     {

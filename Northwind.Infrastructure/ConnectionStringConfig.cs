@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Northwind.Infrastructure
+namespace FleetControl.Infrastructure
 {
     public class ConnectionStringConfig
     {

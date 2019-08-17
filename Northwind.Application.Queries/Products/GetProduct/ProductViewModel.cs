@@ -2,7 +2,7 @@
 using Northwind.Application.Interfaces.Mapping;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Queries.GetProduct
+namespace FleetControl.Application.Queries.GetProduct
 {
     public class ProductViewModel : IHaveCustomMapping
     {

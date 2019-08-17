@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Northwind.Application.Infrastructure.AutoMapper
+namespace FleetControl.Application.Infrastructure.AutoMapper
 {
     public sealed class Map
     {

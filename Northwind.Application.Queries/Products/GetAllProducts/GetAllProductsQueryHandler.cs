@@ -12,7 +12,7 @@ using Microsoft.Extensions.Options;
 using Northwind.Application.Interfaces;
 using Northwind.Infrastructure;
 
-namespace Northwind.Application.Queries.GetAllProducts
+namespace FleetControl.Application.Queries.GetAllProducts
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, ProductsListViewModel>
     {

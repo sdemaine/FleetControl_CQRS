@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 
-namespace Northwind.Persistence.Infrastructure
+namespace FleetControl.Persistence.Infrastructure
 {
     public abstract class DesignTimeDbContextFactoryBase<TContext> :
         IDesignTimeDbContextFactory<TContext> where TContext : DbContext

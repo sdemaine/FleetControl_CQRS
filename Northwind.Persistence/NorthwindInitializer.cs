@@ -4,7 +4,7 @@ using System.Linq;
 using Northwind.Domain.Entities;
 using Northwind.Persistence.Extensions;
 
-namespace Northwind.Persistence
+namespace FleetControl.Persistence
 {
     public class NorthwindInitializer
     {

@@ -4,7 +4,7 @@ using Northwind.Application.Commands.CreateCustomer;
 using Northwind.WebUI.FunctionalTests.Common;
 using Xunit;
 
-namespace Northwind.WebUI.FunctionalTests.Controllers.Customers
+namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
 {
     public class Create : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
