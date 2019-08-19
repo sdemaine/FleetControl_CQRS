@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Northwind\**" />
+    <EmbeddedResource Remove="Northwind\**" />
+    <None Remove="Northwind\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="1.60.6" />
     <PackageReference Include="MediatR" Version="6.0.0" />
   </ItemGroup>

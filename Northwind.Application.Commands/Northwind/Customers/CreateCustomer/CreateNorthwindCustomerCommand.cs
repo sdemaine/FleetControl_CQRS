@@ -2,14 +2,13 @@
 using System.Threading.Tasks;
 using FleetControl.Application.Interfaces;
 using MediatR;
-using Northwind.Domain;
 using Northwind.Domain.Entities;
 
 namespace Northwind.Application.Commands.CreateCustomer
 {
     public class CreateNorthwindCustomerCommand : IRequest
     {
-        public string Id { get; set; }
+        public string CustomerId { get; set; }
 
         public string Address { get; set; }
 
@@ -46,7 +45,7 @@ namespace Northwind.Application.Commands.CreateCustomer
             {
                 var entity = new Customer
                 {
-                    CustomerId = request.Id,
+                    CustomerId = request.CustomerId,
                     Address = request.Address,
                     City = request.City,
                     CompanyName = request.CompanyName,

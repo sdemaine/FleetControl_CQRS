@@ -2,11 +2,11 @@
 
 namespace Northwind.Application.Commands.DeleteCustomer
 {
-    public class DeleteCustomerCommandValidator : AbstractValidator<DeleteNorthwindCustomerCommand>
+    public class DeleteNorthwindCustomerCommandValidator : AbstractValidator<DeleteNorthwindCustomerCommand>
     {
-        public DeleteCustomerCommandValidator()
+        public DeleteNorthwindCustomerCommandValidator()
         {
-            RuleFor(v => v.Id).NotEmpty().Length(5);
+            RuleFor(v => v.CustomerId).NotEmpty().Length(5);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FleetControl.Application.Queries.GetCustomerList;
 using FleetControl.Application.Tests.Infrastructure;
 using FleetControl.Persistence;
 using Northwind.Application.Queries.GetCustomerList;
@@ -11,12 +10,12 @@ using Xunit;
 namespace FleetControlTraders.Application.UnitTests.Infrastructure
 {
     [Collection("QueryCollection")]
-    public class GetCustomersListQueryHandlerTests
+    public class GetNorthwindCustomersListQueryHandlerTests
     {
         private readonly NorthwindDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetCustomersListQueryHandlerTests(QueryTestFixture fixture)
+        public GetNorthwindCustomersListQueryHandlerTests(QueryTestFixture fixture)
         {
             _context = fixture.Context;
             _mapper = fixture.Mapper;

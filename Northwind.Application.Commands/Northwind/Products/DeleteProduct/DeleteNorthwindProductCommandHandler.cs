@@ -8,11 +8,11 @@ using Northwind.Domain.Entities;
 
 namespace Northwind.Application.Commands.DeleteProduct
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteNorthwindProductCommand>
+    public class DeleteNorthwindProductCommandHandler : IRequestHandler<DeleteNorthwindProductCommand>
     {
         private readonly INorthwindDbContext _context;
 
-        public DeleteProductCommandHandler(INorthwindDbContext context)
+        public DeleteNorthwindProductCommandHandler(INorthwindDbContext context)
         {
             _context = context;
         }

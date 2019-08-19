@@ -25,7 +25,7 @@ namespace Northwind.Domain.Entities
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
 
-        public Customer Customer { get; set; }
+        //public Customer Customer { get; set; }
         public Employee Employee { get; set; }
         public Shipper Shipper { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; private set; }

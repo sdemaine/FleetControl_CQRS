@@ -1,25 +1,19 @@
 using AutoMapper;
-using FluentValidation.AspNetCore;
+using FleetControl.Application.Commands.CreateCustomer;
+using FleetControl.Application.Infrastructure;
+using FleetControl.Application.Infrastructure.AutoMapper;
+using FleetControl.Application.Interfaces;
+using FleetControl.Application.Queries;
+using FleetControl.Common;
+using FleetControl.Infrastructure;
+using FleetControl.Persistence;
 using MediatR;
-using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Northwind.Application.Commands.CreateCustomer;
-using Northwind.Application.Commands.CreateProduct;
-using FleetControl.Application.Infrastructure;
-using FleetControl.Application.Infrastructure.AutoMapper;
-using FleetControl.Application.Interfaces;
-using Northwind.Application.Queries.GetProduct;
-using FleetControl.Common;
-using FleetControl.Infrastructure;
-using FleetControl.Persistence;
-using FleetControl.WebUI.Filters;
-using NSwag.AspNetCore;
 using System.Reflection;
 
 namespace FleetControl.WebUI
@@ -46,22 +40,24 @@ namespace FleetControl.WebUI
 
             // Add MediatR (this is a bit clunky but it gets the job done for now).
             // I am choosing a handler in each of the Query and Command assemblies so that I can tell Mediatr to monitor them
-            services.AddMediatR(typeof(GetProductQueryHandler).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(CreateNorthwindProductCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(GetFleetCustomerDetailQueryHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreateFleetCustomerCommand).GetTypeInfo().Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             // Add DbContext using SQL Server Provider
-            services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
+            //services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
 
-            services.AddDbContext<IFleetControlContext, FleetControlContext>(options =>
+            services.AddDbContext<IFleetControlDbContext, FleetControlDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("FleetControlDatabase")));
 
-            services
-                .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerCommandValidator>());
+            services.AddMvc();
+
+            //services
+            //    .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            //    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateNorthwindCustomerCommandValidator>());
 
 
             // This allows for the dependency injection of the config file. It is injected as type IOptions<ConnectionStringConfig>, and referenced with *.Value.NorthwindDatabase
@@ -99,11 +95,11 @@ namespace FleetControl.WebUI
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseSwaggerUi3(settings =>
-            {
-                settings.Path = "/api";
-                settings.DocumentPath = "/api/specification.json";
-            });
+            //app.UseSwaggerUi3(settings =>
+            //{
+            //    settings.Path = "/api";
+            //    settings.DocumentPath = "/api/specification.json";
+            //});
 
             app.UseMvc(routes =>
             {

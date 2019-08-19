@@ -32,9 +32,9 @@ namespace FleetControl.WebUI.Controllers
         [Route("{customerId}/orders")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<CustomerOrderListViewModel>> GetOrders(string customerId)
+        public async Task<ActionResult<NorthwindCustomerOrderListViewModel>> GetOrders(string customerId)
         {
-            return Ok(await Mediator.Send(new GetCustomerOrdersQuery { CustomerId = customerId }));
+            return Ok(await Mediator.Send(new GetNorthwindCustomerOrdersQuery { CustomerId = customerId }));
         }
 
         [HttpPost]
@@ -62,7 +62,7 @@ namespace FleetControl.WebUI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(string id)
         {
-            await Mediator.Send(new DeleteNorthwindCustomerCommand { Id = id });
+            await Mediator.Send(new DeleteNorthwindCustomerCommand { CustomerId = id });
 
             return NoContent();
         }

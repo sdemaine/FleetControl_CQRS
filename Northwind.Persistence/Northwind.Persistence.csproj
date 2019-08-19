@@ -8,6 +8,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <LangVersion>7.1</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Configurations\Northwind\**" />
+    <EmbeddedResource Remove="Configurations\Northwind\**" />
+    <None Remove="Configurations\Northwind\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20180607065932_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180607065932_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180611041835_User.cs" />
+    <Compile Remove="Migrations\20180611041835_User.Designer.cs" />
+    <Compile Remove="Migrations\NorthwindContextModelSnapshot.cs" />
+    <Compile Remove="NorthwindDbContext.cs" />
+    <Compile Remove="NorthwindDbContextFactory.cs" />
+    <Compile Remove="NorthwindInitializer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
@@ -17,6 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

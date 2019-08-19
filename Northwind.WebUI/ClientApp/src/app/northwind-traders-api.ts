@@ -92,7 +92,7 @@ export interface ICustomersClient {
     get(id: string | null): Observable<NorthwindCustomerDetailModel | null>;
     update(id: string, command: UpdateNorthwindCustomerCommand): Observable<void>;
     delete(id: string | null): Observable<void>;
-    getOrders(customerId: string | null): Observable<CustomerOrderListViewModel | null>;
+    getOrders(customerId: string | null): Observable<NorthwindCustomerOrderListViewModel | null>;
 }
 
 @Injectable()
@@ -374,7 +374,7 @@ export class CustomersClient implements ICustomersClient {
         return _observableOf<void>(<any>null);
     }
 
-    getOrders(customerId: string | null): Observable<CustomerOrderListViewModel | null> {
+    getOrders(customerId: string | null): Observable<NorthwindCustomerOrderListViewModel | null> {
         let url_ = this.baseUrl + "/api/Customers/{customerId}/orders";
         if (customerId === undefined || customerId === null)
             throw new Error("The parameter 'customerId' must be defined.");
@@ -396,14 +396,14 @@ export class CustomersClient implements ICustomersClient {
                 try {
                     return this.processGetOrders(<any>response_);
                 } catch (e) {
-                    return <Observable<CustomerOrderListViewModel | null>><any>_observableThrow(e);
+                    return <Observable<NorthwindCustomerOrderListViewModel | null>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<CustomerOrderListViewModel | null>><any>_observableThrow(response_);
+                return <Observable<NorthwindCustomerOrderListViewModel | null>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetOrders(response: HttpResponseBase): Observable<CustomerOrderListViewModel | null> {
+    protected processGetOrders(response: HttpResponseBase): Observable<NorthwindCustomerOrderListViewModel | null> {
         const status = response.status;
         const responseBlob = 
             response instanceof HttpResponse ? response.body : 
@@ -414,7 +414,7 @@ export class CustomersClient implements ICustomersClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? CustomerOrderListViewModel.fromJS(resultData200) : <any>null;
+            result200 = resultData200 ? NorthwindCustomerOrderListViewModel.fromJS(resultData200) : <any>null;
             return _observableOf(result200);
             }));
         } else if (status === 404) {
@@ -429,7 +429,130 @@ export class CustomersClient implements ICustomersClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<CustomerOrderListViewModel | null>(<any>null);
+        return _observableOf<NorthwindCustomerOrderListViewModel | null>(<any>null);
+    }
+}
+
+export interface IFleetCustomersClient {
+    getAll(): Observable<FleetCustomersListViewModel | null>;
+    get(id: string | null): Observable<FleetCustomerDetailModel | null>;
+}
+
+@Injectable()
+export class FleetCustomersClient implements IFleetCustomersClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ? baseUrl : "";
+    }
+
+    getAll(): Observable<FleetCustomersListViewModel | null> {
+        let url_ = this.baseUrl + "/api/FleetCustomers";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAll(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAll(<any>response_);
+                } catch (e) {
+                    return <Observable<FleetCustomersListViewModel | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<FleetCustomersListViewModel | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetAll(response: HttpResponseBase): Observable<FleetCustomersListViewModel | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? FleetCustomersListViewModel.fromJS(resultData200) : <any>null;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<FleetCustomersListViewModel | null>(<any>null);
+    }
+
+    get(id: string | null): Observable<FleetCustomerDetailModel | null> {
+        let url_ = this.baseUrl + "/api/FleetCustomers/{id}";
+        if (id === undefined || id === null)
+            throw new Error("The parameter 'id' must be defined.");
+        url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGet(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGet(<any>response_);
+                } catch (e) {
+                    return <Observable<FleetCustomerDetailModel | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<FleetCustomerDetailModel | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGet(response: HttpResponseBase): Observable<FleetCustomerDetailModel | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? FleetCustomerDetailModel.fromJS(resultData200) : <any>null;
+            return _observableOf(result200);
+            }));
+        } else if (status === 404) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result404: any = null;
+            let resultData404 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result404 = resultData404 ? ProblemDetails.fromJS(resultData404) : <any>null;
+            return throwException("A server error occurred.", status, _responseText, _headers, result404);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<FleetCustomerDetailModel | null>(<any>null);
     }
 }
 
@@ -1015,11 +1138,11 @@ export interface IProblemDetails {
     instance?: string | undefined;
 }
 
-export class CustomerOrderListViewModel implements ICustomerOrderListViewModel {
-    customerOrders?: OrderDto[] | undefined;
+export class NorthwindCustomerOrderListViewModel implements INorthwindCustomerOrderListViewModel {
+    customerOrders?: NorthwindOrderDto[] | undefined;
     createEnabled?: boolean;
 
-    constructor(data?: ICustomerOrderListViewModel) {
+    constructor(data?: INorthwindCustomerOrderListViewModel) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -1033,15 +1156,15 @@ export class CustomerOrderListViewModel implements ICustomerOrderListViewModel {
             if (data["customerOrders"] && data["customerOrders"].constructor === Array) {
                 this.customerOrders = [] as any;
                 for (let item of data["customerOrders"])
-                    this.customerOrders!.push(OrderDto.fromJS(item));
+                    this.customerOrders!.push(NorthwindOrderDto.fromJS(item));
             }
             this.createEnabled = data["createEnabled"];
         }
     }
 
-    static fromJS(data: any): CustomerOrderListViewModel {
+    static fromJS(data: any): NorthwindCustomerOrderListViewModel {
         data = typeof data === 'object' ? data : {};
-        let result = new CustomerOrderListViewModel();
+        let result = new NorthwindCustomerOrderListViewModel();
         result.init(data);
         return result;
     }
@@ -1058,12 +1181,12 @@ export class CustomerOrderListViewModel implements ICustomerOrderListViewModel {
     }
 }
 
-export interface ICustomerOrderListViewModel {
-    customerOrders?: OrderDto[] | undefined;
+export interface INorthwindCustomerOrderListViewModel {
+    customerOrders?: NorthwindOrderDto[] | undefined;
     createEnabled?: boolean;
 }
 
-export class OrderDto implements IOrderDto {
+export class NorthwindOrderDto implements INorthwindOrderDto {
     orderId?: number;
     customerId?: string | undefined;
     employeeId?: number | undefined;
@@ -1080,7 +1203,7 @@ export class OrderDto implements IOrderDto {
     shipCountry?: string | undefined;
     orderDetails?: OrderDetail[] | undefined;
 
-    constructor(data?: IOrderDto) {
+    constructor(data?: INorthwindOrderDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -1113,9 +1236,9 @@ export class OrderDto implements IOrderDto {
         }
     }
 
-    static fromJS(data: any): OrderDto {
+    static fromJS(data: any): NorthwindOrderDto {
         data = typeof data === 'object' ? data : {};
-        let result = new OrderDto();
+        let result = new NorthwindOrderDto();
         result.init(data);
         return result;
     }
@@ -1145,7 +1268,7 @@ export class OrderDto implements IOrderDto {
     }
 }
 
-export interface IOrderDto {
+export interface INorthwindOrderDto {
     orderId?: number;
     customerId?: string | undefined;
     employeeId?: number | undefined;
@@ -2028,7 +2151,7 @@ export interface ISupplier {
 }
 
 export class CreateNorthwindCustomerCommand implements ICreateNorthwindCustomerCommand {
-    id?: string | undefined;
+    customerId?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
     companyName?: string | undefined;
@@ -2051,7 +2174,7 @@ export class CreateNorthwindCustomerCommand implements ICreateNorthwindCustomerC
 
     init(data?: any) {
         if (data) {
-            this.id = data["id"];
+            this.customerId = data["customerId"];
             this.address = data["address"];
             this.city = data["city"];
             this.companyName = data["companyName"];
@@ -2074,7 +2197,7 @@ export class CreateNorthwindCustomerCommand implements ICreateNorthwindCustomerC
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
+        data["customerId"] = this.customerId;
         data["address"] = this.address;
         data["city"] = this.city;
         data["companyName"] = this.companyName;
@@ -2090,7 +2213,7 @@ export class CreateNorthwindCustomerCommand implements ICreateNorthwindCustomerC
 }
 
 export interface ICreateNorthwindCustomerCommand {
-    id?: string | undefined;
+    customerId?: string | undefined;
     address?: string | undefined;
     city?: string | undefined;
     companyName?: string | undefined;
@@ -2177,6 +2300,126 @@ export interface IUpdateNorthwindCustomerCommand {
     phone?: string | undefined;
     postalCode?: string | undefined;
     region?: string | undefined;
+}
+
+export class FleetCustomersListViewModel implements IFleetCustomersListViewModel {
+    customers?: FleetCustomerLookupModel[] | undefined;
+
+    constructor(data?: IFleetCustomersListViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            if (data["customers"] && data["customers"].constructor === Array) {
+                this.customers = [] as any;
+                for (let item of data["customers"])
+                    this.customers!.push(FleetCustomerLookupModel.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): FleetCustomersListViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new FleetCustomersListViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        if (this.customers && this.customers.constructor === Array) {
+            data["customers"] = [];
+            for (let item of this.customers)
+                data["customers"].push(item.toJSON());
+        }
+        return data; 
+    }
+}
+
+export interface IFleetCustomersListViewModel {
+    customers?: FleetCustomerLookupModel[] | undefined;
+}
+
+export class FleetCustomerLookupModel implements IFleetCustomerLookupModel {
+    id?: number;
+    name?: string | undefined;
+
+    constructor(data?: IFleetCustomerLookupModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.id = data["id"];
+            this.name = data["name"];
+        }
+    }
+
+    static fromJS(data: any): FleetCustomerLookupModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new FleetCustomerLookupModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["name"] = this.name;
+        return data; 
+    }
+}
+
+export interface IFleetCustomerLookupModel {
+    id?: number;
+    name?: string | undefined;
+}
+
+export class FleetCustomerDetailModel implements IFleetCustomerDetailModel {
+    id?: number;
+
+    constructor(data?: IFleetCustomerDetailModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.id = data["id"];
+        }
+    }
+
+    static fromJS(data: any): FleetCustomerDetailModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new FleetCustomerDetailModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        return data; 
+    }
+}
+
+export interface IFleetCustomerDetailModel {
+    id?: number;
 }
 
 export class NorthwindProductsListViewModel implements INorthwindProductsListViewModel {

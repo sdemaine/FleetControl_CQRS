@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Northwind.Application.Queries.Orders.GetCustomerOrders
 {
-    public class CustomerOrderListViewModel
+    public class NorthwindCustomerOrderListViewModel
     {
-        public CustomerOrderListViewModel()
+        public NorthwindCustomerOrderListViewModel()
         {
-            CustomerOrders = new List<OrderDto>();
+            CustomerOrders = new List<NorthwindOrderDto>();
         }
-        public IEnumerable<OrderDto> CustomerOrders { get; set; }
+        public IEnumerable<NorthwindOrderDto> CustomerOrders { get; set; }
 
         public bool CreateEnabled { get; set; }
     }

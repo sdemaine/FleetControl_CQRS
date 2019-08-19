@@ -1,9 +1,11 @@
 ﻿using FleetControl.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FleetControl.Application.Interfaces
 {
-    public interface IFleetControlContext
+    public interface IFleetControlDbContext
     {
         DbSet<Audit> Audit { get; set; }
         DbSet<AuditDataType> AuditDataType { get; set; }
@@ -99,5 +101,8 @@ namespace FleetControl.Application.Interfaces
         DbSet<VoyagerSyncVehicle> VoyagerSyncVehicle { get; set; }
         DbSet<WinC6TransactionLog> WinC6transactionLog { get; set; }
         DbSet<YTD_Product_Totals> YtdProductTotals { get; set; }
+
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

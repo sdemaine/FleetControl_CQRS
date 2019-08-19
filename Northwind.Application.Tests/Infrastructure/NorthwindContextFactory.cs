@@ -17,11 +17,11 @@ namespace Northwind.Application.Tests.Infrastructure
 
             context.Database.EnsureCreated();
 
-            context.Customers.AddRange(new[] {
-                new Customer { CustomerId = "ADAM", ContactName = "Adam Cogan" },
-                new Customer { CustomerId = "JASON", ContactName = "Jason Taylor" },
-                new Customer { CustomerId = "BREND", ContactName = "Brendan Richards" },
-            });
+            //context.Customers.AddRange(new[] {
+            //    new Customer { CustomerId = "ADAM", ContactName = "Adam Cogan" },
+            //    new Customer { CustomerId = "JASON", ContactName = "Jason Taylor" },
+            //    new Customer { CustomerId = "BREND", ContactName = "Brendan Richards" },
+            //});
 
             context.SaveChanges();
 

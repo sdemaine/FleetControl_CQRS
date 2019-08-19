@@ -3,9 +3,9 @@ using FluentValidation.Validators;
 
 namespace Northwind.Application.Commands.UpdateCustomer
 {
-    public class UpdateCustomerCommandValidator : AbstractValidator<UpdateNorthwindCustomerCommand>
+    public class UpdateNorthwindCustomerCommandValidator : AbstractValidator<UpdateNorthwindCustomerCommand>
     {
-        public UpdateCustomerCommandValidator()
+        public UpdateNorthwindCustomerCommandValidator()
         {
             RuleFor(x => x.Id).MaximumLength(5).NotEmpty();
             RuleFor(x => x.Address).MaximumLength(60);

@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Api.Analyzers" Version="2.2.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.1" />
@@ -31,8 +32,21 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Controllers\Northwind\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Controllers\Northwind\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Controllers\Northwind\**" />
+    <None Remove="Controllers\Northwind\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CategoriesController.cs" />
+    <Compile Remove="Controllers\CustomersController.cs" />
+    <Compile Remove="Controllers\ProductsController.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,11 +57,11 @@
     <ProjectReference Include="..\Northwind.Persistence\Northwind.Persistence.csproj" />
   </ItemGroup>
   
-  <Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+  <!--<Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
     <Copy SourceFiles="@(Reference)" DestinationFolder="$(OutDir)References" />
     <Exec Command="$(NSwagExe_Core22) run /variables:Configuration=$(Configuration)" />
     <RemoveDir Directories="$(OutDir)References" />
-  </Target>
+  </Target>-->
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

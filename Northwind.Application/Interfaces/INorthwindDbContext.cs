@@ -9,7 +9,7 @@ namespace FleetControl.Application.Interfaces
     {
         DbSet<Category> Categories { get; set; }
 
-        DbSet<Customer> Customers { get; set; }
+        //DbSet<Customer> Customers { get; set; }
 
         DbSet<Employee> Employees { get; set; }
 

@@ -20,7 +20,7 @@ namespace FleetControl.WebUI.FunctionalTests.Controllers.Customers
         {
             var command = new CreateNorthwindCustomerCommand
             {
-                Id = "ABCDE",
+                CustomerId = "ABCDE",
                 Address = "Obere Str. 57",
                 City = "Berlin",
                 CompanyName = "Alfreds Futterkiste",

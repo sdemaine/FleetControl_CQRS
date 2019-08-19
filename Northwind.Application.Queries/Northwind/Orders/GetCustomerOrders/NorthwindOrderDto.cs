@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Application.Queries.Orders.GetCustomerOrders
 {
-    public class OrderDto : IHaveCustomMapping
+    public class NorthwindOrderDto : IHaveCustomMapping
     {
         public int OrderId { get; set; }
         public string CustomerId { get; set; }
@@ -33,7 +33,7 @@ namespace Northwind.Application.Queries.Orders.GetCustomerOrders
 
         public void CreateMappings(Profile configuration)
         {
-            configuration.CreateMap<Order, OrderDto>();
+            configuration.CreateMap<Order, NorthwindOrderDto>();
         }
     }
 }

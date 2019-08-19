@@ -5,9 +5,9 @@ using FleetControl.Application.Tests.Infrastructure;
 using System.Threading;
 using Xunit;
 
-namespace FleetControl.Application.Tests.Customers.Commands.CreateCustomer
+namespace Northwind.Application.Tests.Customers.Commands.CreateCustomer
 {
-    public class CreateCustomerCommandTests : CommandTestBase
+    public class CreateNorthwindCustomerCommandTests : CommandTestBase
     {
         [Fact]
         public void Handle_GivenValidRequest_ShouldRaiseCustomerCreatedNotification()
@@ -18,7 +18,7 @@ namespace FleetControl.Application.Tests.Customers.Commands.CreateCustomer
             var newCustomerId = "QAZQ1";
 
             // Act
-            var result = sut.Handle(new CreateNorthwindCustomerCommand { Id = newCustomerId }, CancellationToken.None);
+            var result = sut.Handle(new CreateNorthwindCustomerCommand { CustomerId = newCustomerId }, CancellationToken.None);
 
 
             // Assert

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FleetControl.Application.Queries.Customers
+namespace FleetControl.Application.Queries
 {
-    public class FleetCustomerViewModel
+    public class FleetCustomerViewDto
     {
         public int BAID { get; set; }
 
@@ -72,8 +72,8 @@ namespace FleetControl.Application.Queries.Customers
         public HardSoftModes WeeklyDollarLimitMode { get; set; }
 
         public int? MonthlyDollarLimit { get; set; }
-        public HardSoftModes MonthlyDollarLimitMode { get; set; }
 
+        public HardSoftModes MonthlyDollarLimitMode { get; set; }
         public int? DailyTransactionLimit { get; set; }
 
         public HardSoftModes DailyTransactionLimitMode { get; set; }

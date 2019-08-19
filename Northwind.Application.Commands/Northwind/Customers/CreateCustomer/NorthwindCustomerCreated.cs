@@ -10,11 +10,11 @@ namespace Northwind.Application.Commands.CreateCustomer
     {
         public string CustomerId { get; set; }
 
-        public class CustomerCreatedHandler : INotificationHandler<NorthwindCustomerCreated>
+        public class NorthwindCustomerCreatedHandler : INotificationHandler<NorthwindCustomerCreated>
         {
             private readonly INotificationService _notification;
 
-            public CustomerCreatedHandler(INotificationService notification)
+            public NorthwindCustomerCreatedHandler(INotificationService notification)
             {
                 _notification = notification;
             }

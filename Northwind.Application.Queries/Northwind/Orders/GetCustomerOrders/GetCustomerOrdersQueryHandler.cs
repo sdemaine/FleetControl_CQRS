@@ -16,32 +16,32 @@ using FleetControl.Infrastructure;
 
 namespace Northwind.Application.Queries.Orders.GetCustomerOrders
 {
-    public class GetCustomerOrdersQueryHandler : IRequestHandler<GetCustomerOrdersQuery, CustomerOrderListViewModel>
+    public class GetNorthwindCustomerOrdersQueryHandler : IRequestHandler<GetNorthwindCustomerOrdersQuery, NorthwindCustomerOrderListViewModel>
     {
         private readonly INorthwindDbContext _context;
         private readonly IMapper _mapper;
         private readonly IOptions<ConnectionStringConfig> _configAccessor;
 
-        public GetCustomerOrdersQueryHandler(INorthwindDbContext context, IMapper mapper, IOptions<ConnectionStringConfig> configAccessor)
+        public GetNorthwindCustomerOrdersQueryHandler(INorthwindDbContext context, IMapper mapper, IOptions<ConnectionStringConfig> configAccessor)
         {
             _context = context;
             _mapper = mapper;
             _configAccessor = configAccessor;
         }
 
-        public async Task<CustomerOrderListViewModel> Handle(GetCustomerOrdersQuery request, CancellationToken cancellationToken)
+        public async Task<NorthwindCustomerOrderListViewModel> Handle(GetNorthwindCustomerOrdersQuery request, CancellationToken cancellationToken)
         {
             var customer = await _context.Customers.Include(x => x.Orders).FirstOrDefaultAsync(x => x.CustomerId == request.CustomerId);
-            var model = new CustomerOrderListViewModel()
+            var model = new NorthwindCustomerOrderListViewModel()
             {
                 CreateEnabled = true,
-                CustomerOrders = new List<OrderDto>()
+                CustomerOrders = new List<NorthwindOrderDto>()
             };
 
             
             if (customer != null)
             {
-                model.CustomerOrders = _mapper.Map<IEnumerable<OrderDto>>(customer.Orders);
+                model.CustomerOrders = _mapper.Map<IEnumerable<NorthwindOrderDto>>(customer.Orders);
             }
 
             return model;

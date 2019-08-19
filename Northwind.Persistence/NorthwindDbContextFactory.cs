@@ -3,11 +3,11 @@ using FleetControl.Persistence.Infrastructure;
 
 namespace FleetControl.Persistence
 {
-    public class NorthwindDbContextFactory : DesignTimeDbContextFactoryBase<NorthwindDbContext>
+    public class NorthwindDbContextFactory : DesignTimeDbContextFactoryBase<FleetControlDbContext>
     {
-        protected override NorthwindDbContext CreateNewInstance(DbContextOptions<NorthwindDbContext> options)
+        protected override FleetControlDbContext CreateNewInstance(DbContextOptions<FleetControlDbContext> options)
         {
-            return new NorthwindDbContext(options);
+            return new FleetControlDbContext(options);
         }
     }
 }

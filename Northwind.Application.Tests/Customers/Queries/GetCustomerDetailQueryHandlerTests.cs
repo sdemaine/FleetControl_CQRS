@@ -9,11 +9,11 @@ using Xunit;
 namespace Northwind.Application.Tests.Customers.Queries
 {
     [Collection("QueryCollection")]
-    public class GetCustomerDetailQueryHandlerTests
+    public class GetNorthwindCustomerDetailQueryHandlerTests
     { 
         private readonly NorthwindDbContext _context;
 
-        public GetCustomerDetailQueryHandlerTests(QueryTestFixture fixture)
+        public GetNorthwindCustomerDetailQueryHandlerTests(QueryTestFixture fixture)
         {
             _context = fixture.Context;
         }    

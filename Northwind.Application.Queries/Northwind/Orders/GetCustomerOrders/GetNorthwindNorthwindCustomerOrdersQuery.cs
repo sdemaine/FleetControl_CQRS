@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Application.Queries.Orders.GetCustomerOrders
 {
-    public class GetCustomerOrdersQuery : IRequest<CustomerOrderListViewModel>
+    public class GetNorthwindCustomerOrdersQuery : IRequest<NorthwindCustomerOrderListViewModel>
     {
         public string CustomerId { get; set; }
     }
