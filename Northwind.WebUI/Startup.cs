@@ -40,7 +40,7 @@ namespace FleetControl.WebUI
 
             // Add MediatR (this is a bit clunky but it gets the job done for now).
             // I am choosing a handler in each of the Query and Command assemblies so that I can tell Mediatr to monitor them
-            services.AddMediatR(typeof(GetFleetCustomerDetailQueryHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(GetFleetCustomerDetail_QueryHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(CreateFleetCustomerCommand).GetTypeInfo().Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));

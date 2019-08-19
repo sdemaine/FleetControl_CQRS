@@ -4,23 +4,23 @@ using FleetControl.Domain;
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomerDetailModel
+    public class GetFleetCustomerDetail_Model
     {
         public int Id { get; set; }
         
 
-        public static Expression<Func<Customer, GetFleetCustomerDetailModel>> Projection
+        public static Expression<Func<Customer, GetFleetCustomerDetail_Model>> Projection
         {
             get
             {
-                return customer => new GetFleetCustomerDetailModel
+                return customer => new GetFleetCustomerDetail_Model
                 {
                     Id = customer.Id
                 };
             }
         }
 
-        public static GetFleetCustomerDetailModel Create(Customer customer)
+        public static GetFleetCustomerDetail_Model Create(Customer customer)
         {
             return Projection.Compile().Invoke(customer);
         }

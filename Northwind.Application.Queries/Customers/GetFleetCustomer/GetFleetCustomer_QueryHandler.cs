@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomerQueryHandler : IRequestHandler<GetFleetCustomerQuery, GetFleetCustomerViewModel>
+    public class GetFleetCustomer_QueryHandler : IRequestHandler<GetFleetCustomer_Query, GetFleetCustomer_ViewModel>
     {
         private readonly IFleetControlDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetFleetCustomerQueryHandler(IFleetControlDbContext context, IMapper mapper)
+        public GetFleetCustomer_QueryHandler(IFleetControlDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<GetFleetCustomerViewModel> Handle(GetFleetCustomerQuery request, CancellationToken cancellationToken)
+        public async Task<GetFleetCustomer_ViewModel> Handle(GetFleetCustomer_Query request, CancellationToken cancellationToken)
         {
             var customer = await _context.Customer.FirstOrDefaultAsync(x => x.BAID == request.Baid);
             
-            return new GetFleetCustomerViewModel
+            return new GetFleetCustomer_ViewModel
             {
-                Customer = _mapper.Map<FleetCustomerViewDto>(customer)
+                Customer = _mapper.Map<GetFleetCustomer_ViewDto>(customer)
             };
         }
     }

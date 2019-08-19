@@ -3,7 +3,7 @@ using MediatR;
 
 namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 {
-    public class GetFleetDriversQuery : IRequest<FleetDriversViewModel>
+    public class GetFleetDriverListQuery : IRequest<GetFleetDriverList_ViewModel>
     {
         public int Baid { get; set; }
     }

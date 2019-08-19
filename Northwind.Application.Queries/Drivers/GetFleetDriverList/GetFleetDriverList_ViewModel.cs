@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries.Drivers
 {
-    public class FleetDriversViewModel : QueryViewModel
+    public class GetFleetDriverList_ViewModel : QueryViewModel
     {
-        public IEnumerable<FleetDriverViewDto> Drivers { get; set; }
+        public IEnumerable<GetFleetDriverList_ViewDto> Drivers { get; set; }
     }
 }

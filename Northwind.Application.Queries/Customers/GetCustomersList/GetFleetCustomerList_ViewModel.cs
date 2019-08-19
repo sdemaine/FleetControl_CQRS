@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries
 {
-    public class FleetCustomerViewModel
+    public class GetFleetCustomerList_ViewModel
     {
         public int BAID { get; set; }
 

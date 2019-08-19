@@ -2,7 +2,7 @@
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomerDetailQueryValidator : AbstractValidator<GetFleetCustomerDetailQuery>
+    public class GetFleetCustomerDetailQueryValidator : AbstractValidator<GetFleetCustomerDetail_Query>
     {
         public GetFleetCustomerDetailQueryValidator()
         {

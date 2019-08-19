@@ -10,17 +10,17 @@ namespace FleetControl.WebUI.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<FleetCustomersListViewModel>> GetAll()
+        public async Task<ActionResult<GetFleetCustomersList_ViewModel>> GetAll()
         {
-            return Ok(await Mediator.Send(new GetFleetCustomersListQuery()));
+            return Ok(await Mediator.Send(new GetFleetCustomersList_Query()));
         }
 
         [HttpGet("{baid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<GetFleetCustomerDetailModel>> Get(int baid)
+        public async Task<ActionResult<GetFleetCustomerDetail_Model>> Get(int baid)
         {
-            return Ok(await Mediator.Send(new GetFleetCustomerQuery { Baid = baid }));
+            return Ok(await Mediator.Send(new GetFleetCustomer_Query { Baid = baid }));
         }
     }
 }

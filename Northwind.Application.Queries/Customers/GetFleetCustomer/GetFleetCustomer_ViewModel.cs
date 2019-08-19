@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomerViewModel
+    public class GetFleetCustomer_ViewModel
     {
-        public FleetCustomerViewDto Customer { get; set; }
+        public GetFleetCustomer_ViewDto Customer { get; set; }
     }
 }

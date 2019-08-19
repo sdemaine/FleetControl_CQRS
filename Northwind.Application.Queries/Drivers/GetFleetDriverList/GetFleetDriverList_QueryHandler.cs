@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 {
-    public class GetFleetDriversQueryHandler : IRequestHandler<GetFleetDriversQuery, FleetDriversViewModel>
+    public class GetFleetDriverList_QueryHandler : IRequestHandler<GetFleetDriverListQuery, GetFleetDriverList_ViewModel>
     {
         private readonly IFleetControlDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetFleetDriversQueryHandler(IFleetControlDbContext context, IMapper mapper)
+        public GetFleetDriverList_QueryHandler(IFleetControlDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<FleetDriversViewModel> Handle(GetFleetDriversQuery request, CancellationToken cancellationToken)
+        public async Task<GetFleetDriverList_ViewModel> Handle(GetFleetDriverListQuery request, CancellationToken cancellationToken)
         {
             var customer = await _context.Customer.FirstOrDefaultAsync(x => x.BAID == request.Baid);
 
@@ -33,10 +33,10 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
                 drivers = await _context.Driver.Where(x => x.CustomerId == customer.Id).ToListAsync();
             }
 
-            return new FleetDriversViewModel
+            return new GetFleetDriverList_ViewModel
             {
                 RecordCount = drivers.Count,
-                Drivers = _mapper.Map<IEnumerable<FleetDriverViewDto>>(drivers)
+                Drivers = _mapper.Map<IEnumerable<GetFleetDriverList_ViewDto>>(drivers)
             };
         }
     }

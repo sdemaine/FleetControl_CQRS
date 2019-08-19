@@ -7,16 +7,16 @@ using FleetControl.Domain;
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomerDetailQueryHandler : IRequestHandler<GetFleetCustomerDetailQuery, GetFleetCustomerDetailModel>
+    public class GetFleetCustomerDetail_QueryHandler : IRequestHandler<GetFleetCustomerDetail_Query, GetFleetCustomerDetail_Model>
     {
         private readonly IFleetControlDbContext _context;
 
-        public GetFleetCustomerDetailQueryHandler(IFleetControlDbContext context)
+        public GetFleetCustomerDetail_QueryHandler(IFleetControlDbContext context)
         {
             _context = context;
         }
 
-        public async Task<GetFleetCustomerDetailModel> Handle(GetFleetCustomerDetailQuery request, CancellationToken cancellationToken)
+        public async Task<GetFleetCustomerDetail_Model> Handle(GetFleetCustomerDetail_Query request, CancellationToken cancellationToken)
         {
             //var entity = await _context.Customer
             //    .FindAsync(request.Id);

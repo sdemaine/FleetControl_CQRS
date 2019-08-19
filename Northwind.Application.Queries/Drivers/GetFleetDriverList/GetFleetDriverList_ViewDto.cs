@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries.Drivers
 {
-    public class FleetDriverViewDto
+    public class GetFleetDriverList_ViewDto
     {
         public string ExternalDriverId { get; set; }
 
