@@ -56,6 +56,10 @@
     <ProjectReference Include="..\FleetControl.Infrastructure\FleetControl.Infrastructure.csproj" />
     <ProjectReference Include="..\FleetControl.Persistence\FleetControl.Persistence.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   
   <!--<Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
     <Copy SourceFiles="@(Reference)" DestinationFolder="$(OutDir)References" />

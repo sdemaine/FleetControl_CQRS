@@ -50,7 +50,7 @@ namespace FleetControl.WebUI
             //    options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
 
             services.AddDbContext<IFleetControlDbContext, FleetControlDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("FleetControlDatabase")));
+                options.UseSqlServer(Configuration.GetConnectionString("FleetControlDatabase"), builder => builder.UseRowNumberForPaging()));
 
             services.AddMvc();
 

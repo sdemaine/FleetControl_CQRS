@@ -10,9 +10,9 @@ namespace FleetControl.WebUI.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<GetFleetCustomersList_ViewModel>> GetAll()
+        public async Task<ActionResult<GetFleetCustomersList_ViewModel>> GetAll([FromQuery] QueryRequestModel queryRequest)
         {
-            return Ok(await Mediator.Send(new GetFleetCustomersList_Query()));
+            return Ok(await Mediator.Send(new GetFleetCustomersList_Query(queryRequest)));
         }
 
         [HttpGet("{baid}")]

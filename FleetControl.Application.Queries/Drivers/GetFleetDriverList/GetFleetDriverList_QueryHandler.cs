@@ -24,14 +24,62 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 
         public async Task<GetFleetDriverList_ViewModel> Handle(GetFleetDriverListQuery request, CancellationToken cancellationToken)
         {
+            var sortByValue = (request.QueryRequest.SortBy ?? "LASTNAME").ToUpper();
+            var sortByDirection = (request.QueryRequest.SortDirection ?? "ASC").ToUpper();
+            var skip = request.QueryRequest.Skip;
+            var take = request.QueryRequest.Take;
+            var searchQuery = request.QueryRequest.SearchQuery;
+
             var customer = await _context.Customer.FirstOrDefaultAsync(x => x.BAID == request.Baid);
 
-            var drivers = new List<Driver>();
+            if (customer == null) return null;
 
-            if (customer != null)
+            IQueryable<Driver> driverQuery = _context.Driver.Where(x => x.CustomerId == customer.Id).AsQueryable();
+
+
+
+            if (searchQuery != null)
             {
-                drivers = await _context.Driver.Where(x => x.CustomerId == customer.Id).ToListAsync();
+                driverQuery = driverQuery.Where(x => x.FirstName.Contains(searchQuery) || x.LastName.Contains(searchQuery) || x.TheirEmployeeNumber.Contains(searchQuery));
             }
+
+
+
+            if (take != 0)
+            {
+                driverQuery = driverQuery.Skip(skip).Take(take);
+            }
+
+            switch (sortByValue)
+            {
+                case "FIRSTNAME":
+                    driverQuery = sortByDirection == "DESC" ?
+                        driverQuery.OrderByDescending(x => x.FirstName)
+                        : driverQuery.OrderBy(x => x.FirstName);
+
+                    break;
+
+                case "LASTNAME":
+                    driverQuery = sortByDirection == "DESC" ?
+                        driverQuery.OrderByDescending(x => x.LastName)
+                        : driverQuery.OrderBy(x => x.LastName);
+
+                    break;
+
+                case "THEIREMPLOYEENUMBER":
+                    driverQuery = sortByDirection == "DESC" ?
+                        driverQuery.OrderByDescending(x => x.TheirEmployeeNumber)
+                        : driverQuery.OrderBy(x => x.TheirEmployeeNumber);
+
+                    break;
+
+
+                default:
+
+                    break;
+            }
+
+            var drivers = await driverQuery.ToListAsync();
 
             return new GetFleetDriverList_ViewModel
             {

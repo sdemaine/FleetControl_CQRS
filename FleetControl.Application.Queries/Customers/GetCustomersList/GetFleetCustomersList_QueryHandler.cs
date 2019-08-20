@@ -23,8 +23,57 @@ namespace FleetControl.Application.Queries
 
         public async Task<GetFleetCustomersList_ViewModel> Handle(GetFleetCustomersList_Query request, CancellationToken cancellationToken)
         {
-            var cards = await _context.Card.Take(10).ToListAsync();
-            var customers = await _context.Customer.OrderBy(x => x.CustomerName).ToListAsync();
+            var getCustomersQuery = _context.Customer.AsQueryable();
+            var sortByValue = (request.QueryRequest.SortBy ?? "CUSTOMERNAME").ToUpper();
+            var sortByDirection = (request.QueryRequest.SortDirection ?? "ASC").ToUpper();
+            var skip = request.QueryRequest.Skip;
+            var take = request.QueryRequest.Take;
+            var searchQuery = request.QueryRequest.SearchQuery;
+
+            if (searchQuery != null)
+            {
+                getCustomersQuery = getCustomersQuery.Where(x => x.CustomerName.Contains(searchQuery) || x.Address1.Contains(searchQuery) || x.Contact.Contains(searchQuery) || x.Telephone.Contains(searchQuery));
+            }
+            
+
+
+            if (take != 0)
+            {
+                getCustomersQuery = getCustomersQuery.Skip(skip).Take(take);
+            }
+
+            switch (sortByValue)
+            {
+                case "CUSTOMERNAME":
+                    getCustomersQuery = sortByDirection == "DESC" ?
+                        getCustomersQuery.OrderByDescending(x => x.CustomerName)
+                        : getCustomersQuery.OrderBy(x => x.CustomerName);
+
+                    break;
+
+                case "ADDRESS":
+                    getCustomersQuery = sortByDirection == "DESC" ?
+                        getCustomersQuery.OrderByDescending(x => x.Address1)
+                        : getCustomersQuery.OrderBy(x => x.Address1);
+
+                    break;
+
+                case "CONTACT":
+                    getCustomersQuery = sortByDirection == "DESC" ?
+                        getCustomersQuery.OrderByDescending(x => x.Contact)
+                        : getCustomersQuery.OrderBy(x => x.Contact);
+
+                    break;
+
+
+                default:
+
+                    break;
+            }
+
+
+
+            var customers = await getCustomersQuery.ToListAsync();
 
 
             return new GetFleetCustomersList_ViewModel
