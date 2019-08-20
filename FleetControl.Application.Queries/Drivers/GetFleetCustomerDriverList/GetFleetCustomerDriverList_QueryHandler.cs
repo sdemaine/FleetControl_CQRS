@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 
 namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 {
-    public class GetFleetDriverList_QueryHandler : IRequestHandler<GetFleetDriverListQuery, GetFleetDriverList_ViewModel>
+    public class GetFleetCustomerDriverList_QueryHandler : IRequestHandler<GetFleetCustomerDriverListQuery, GetFleetCustomerDriverList_ViewModel>
     {
         private readonly IFleetControlDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetFleetDriverList_QueryHandler(IFleetControlDbContext context, IMapper mapper)
+        public GetFleetCustomerDriverList_QueryHandler(IFleetControlDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<GetFleetDriverList_ViewModel> Handle(GetFleetDriverListQuery request, CancellationToken cancellationToken)
+        public async Task<GetFleetCustomerDriverList_ViewModel> Handle(GetFleetCustomerDriverListQuery request, CancellationToken cancellationToken)
         {
             var sortByValue = (request.QueryRequest.SortBy ?? "LASTNAME").ToUpper();
             var sortByDirection = (request.QueryRequest.SortDirection ?? "ASC").ToUpper();
@@ -81,7 +81,7 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 
             var drivers = await driverQuery.ToListAsync();
 
-            return new GetFleetDriverList_ViewModel(drivers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetDriverList_ViewDto>>(drivers));
+            return new GetFleetCustomerDriverList_ViewModel(drivers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetCustomerDriverList_ViewDto>>(drivers));
         }
     }
 }

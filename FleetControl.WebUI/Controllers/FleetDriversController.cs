@@ -22,7 +22,7 @@ namespace FleetControl.WebUI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<GetFleetCustomerDetail_Model>>> Get(int baid, [FromQuery] QueryRequestModel queryRequest)
         {
-            return Ok(await Mediator.Send(new GetFleetDriverListQuery(baid, queryRequest)));
+            return Ok(await Mediator.Send(new GetFleetCustomerDriverListQuery(baid, queryRequest)));
         }
     }
 }
