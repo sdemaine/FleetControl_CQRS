@@ -76,12 +76,7 @@ namespace FleetControl.Application.Queries
             var customers = await getCustomersQuery.ToListAsync();
 
 
-            return new GetFleetCustomersList_ViewModel
-            {
-                RecordCount = customers.Count,
-                Customers = _mapper.Map<IEnumerable<GetFleetCustomerList_Dto>>(customers)
-                //Customers = await _context.Customer.ProjectTo<GetFleetCustomerList_Dto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken)
-            };
+            return new GetFleetCustomersList_ViewModel(customers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetCustomerList_Dto>>(customers));
         }
     }
 }

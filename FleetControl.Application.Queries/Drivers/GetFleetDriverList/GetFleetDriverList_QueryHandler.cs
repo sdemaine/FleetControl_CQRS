@@ -81,11 +81,7 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 
             var drivers = await driverQuery.ToListAsync();
 
-            return new GetFleetDriverList_ViewModel
-            {
-                RecordCount = drivers.Count,
-                Drivers = _mapper.Map<IEnumerable<GetFleetDriverList_ViewDto>>(drivers)
-            };
+            return new GetFleetDriverList_ViewModel(drivers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetDriverList_ViewDto>>(drivers));
         }
     }
 }

@@ -8,6 +8,11 @@ namespace FleetControl.Application.Queries
 {
     public class GetFleetCustomer_ViewModel : QueryViewModel
     {
-        public GetFleetCustomer_ViewDto Customer { get; set; }
+        public GetFleetCustomer_Dto Customer { get; set; }
+
+        public GetFleetCustomer_ViewModel(int recordCount, string previousPage, string nextPage, GetFleetCustomer_Dto customer) : base(recordCount, previousPage, nextPage)
+        {
+            Customer = Customer;
+        }
     }
 }

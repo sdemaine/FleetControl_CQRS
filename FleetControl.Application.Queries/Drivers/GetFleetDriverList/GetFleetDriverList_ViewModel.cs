@@ -8,6 +8,11 @@ namespace FleetControl.Application.Queries.Drivers
 {
     public class GetFleetDriverList_ViewModel : QueryViewModel
     {
-        public IEnumerable<GetFleetDriverList_ViewDto> Drivers { get; set; }
+        public IEnumerable<GetFleetDriverList_ViewDto> Drivers { get; }
+
+        public GetFleetDriverList_ViewModel(int recordCount, string previousPage, string nextPage, IEnumerable<GetFleetDriverList_ViewDto> drivers) : base(recordCount, previousPage, nextPage)
+        {
+            Drivers = drivers;
+        }
     }
 }
