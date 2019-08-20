@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using FleetControl.Application.Interfaces;
 using MediatR;
-using Northwind.Domain.Entities;
 
 namespace Northwind.Application.Commands.CreateCustomer
 {

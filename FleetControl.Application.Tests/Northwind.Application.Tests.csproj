@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!--<Import Project="..\Northwind.CodeAnalysis.targets" />-->
+  <!--<Import Project="..\FleetControl.CodeAnalysis.targets" />-->
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
 
@@ -21,10 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application.Commands\FleetControl.Application.Commands.csproj" />
-    <ProjectReference Include="..\Northwind.Application.Queries\FleetControl.Application.Queries.csproj" />
-    <ProjectReference Include="..\Northwind.Application\FleetControl.Application.csproj" />
-    <ProjectReference Include="..\Northwind.Persistence\Northwind.Persistence.csproj" />
+    <ProjectReference Include="..\FleetControl.Application.Commands\FleetControl.Application.Commands.csproj" />
+    <ProjectReference Include="..\FleetControl.Application.Queries\FleetControl.Application.Queries.csproj" />
+    <ProjectReference Include="..\FleetControl.Application\FleetControl.Application.csproj" />
+    <ProjectReference Include="..\FleetControl.Persistence\FleetControl.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

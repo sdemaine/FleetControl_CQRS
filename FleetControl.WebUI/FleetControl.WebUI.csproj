@@ -32,15 +32,15 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
-    <Compile Remove="Controllers\Northwind\**" />
+    <Compile Remove="Controllers\FleetControl\**" />
     <Content Remove="$(SpaRoot)**" />
-    <Content Remove="Controllers\Northwind\**" />
+    <Content Remove="Controllers\FleetControl\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Controllers\Northwind\**" />
-    <None Remove="Controllers\Northwind\**" />
+    <EmbeddedResource Remove="Controllers\FleetControl\**" />
+    <None Remove="Controllers\FleetControl\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,11 +50,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application.Commands\FleetControl.Application.Commands.csproj" />
-    <ProjectReference Include="..\Northwind.Application.Queries\FleetControl.Application.Queries.csproj" />
-    <ProjectReference Include="..\Northwind.Common\Northwind.Common.csproj" />
-    <ProjectReference Include="..\Northwind.Infrastructure\Northwind.Infrastructure.csproj" />
-    <ProjectReference Include="..\Northwind.Persistence\Northwind.Persistence.csproj" />
+    <ProjectReference Include="..\FleetControl.Application.Commands\FleetControl.Application.Commands.csproj" />
+    <ProjectReference Include="..\FleetControl.Application.Queries\FleetControl.Application.Queries.csproj" />
+    <ProjectReference Include="..\FleetControl.Common\FleetControl.Common.csproj" />
+    <ProjectReference Include="..\FleetControl.Infrastructure\FleetControl.Infrastructure.csproj" />
+    <ProjectReference Include="..\FleetControl.Persistence\FleetControl.Persistence.csproj" />
   </ItemGroup>
   
   <!--<Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">

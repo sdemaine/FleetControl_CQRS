@@ -5,9 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FleetControl\**" />
     <Compile Remove="Northwind\**" />
+    <Compile Remove="Products\**" />
+    <EmbeddedResource Remove="FleetControl\**" />
     <EmbeddedResource Remove="Northwind\**" />
+    <EmbeddedResource Remove="Products\**" />
+    <None Remove="FleetControl\**" />
     <None Remove="Northwind\**" />
+    <None Remove="Products\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Application\FleetControl.Application.csproj" />
-    <ProjectReference Include="..\Northwind.Domain\FleetControl.Domain.csproj" />
+    <ProjectReference Include="..\FleetControl.Application\FleetControl.Application.csproj" />
+    <ProjectReference Include="..\FleetControl.Domain\FleetControl.Domain.csproj" />
   </ItemGroup>
 
 </Project>

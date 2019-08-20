@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!--<Import Project="..\Northwind.CodeAnalysis.targets" />-->
+  <!--<Import Project="..\FleetControl.CodeAnalysis.targets" />-->
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Northwind.Domain</AssemblyName>
-    <RootNamespace>Northwind.Domain</RootNamespace>
+    <AssemblyName>FleetControl.Domain</AssemblyName>
+    <RootNamespace>FleetControl.Domain</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Entities\FleetControl\DAM\**" />
@@ -12,9 +12,6 @@
     <EmbeddedResource Remove="Entities\FleetControl\WinC6\**" />
     <None Remove="Entities\FleetControl\DAM\**" />
     <None Remove="Entities\FleetControl\WinC6\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Entities\Northwind\Customer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FileHelpers" Version="3.4.0" />

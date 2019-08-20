@@ -2,7 +2,6 @@
 using FleetControl.Application.Interfaces;
 using FleetControl.Domain;
 using MediatR;
-using Northwind.Domain.Entities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;

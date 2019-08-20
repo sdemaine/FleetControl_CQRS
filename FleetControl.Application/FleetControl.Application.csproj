@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!--<Import Project="..\Northwind.CodeAnalysis.targets" />-->
+  <!--<Import Project="..\FleetControl.CodeAnalysis.targets" />-->
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Northwind.Application</AssemblyName>
-    <RootNamespace>Northwind.Application</RootNamespace>
+    <AssemblyName>FleetControl.Application</AssemblyName>
+    <RootNamespace>FleetControl.Application</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Categories\**" />
@@ -16,6 +16,9 @@
     <None Remove="Customers\**" />
     <None Remove="Products\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Interfaces\INorthwindDbContext.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.1.3" />
@@ -25,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Domain\FleetControl.Domain.csproj" />
+    <ProjectReference Include="..\FleetControl.Domain\FleetControl.Domain.csproj" />
   </ItemGroup>
 
 </Project>

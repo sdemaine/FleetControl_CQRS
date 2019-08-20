@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C1158497-4B38-48DD-B698-57B7A0D50249}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Common", "Northwind.Common\Northwind.Common.csproj", "{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Common", "FleetControl.Common\FleetControl.Common.csproj", "{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Domain", "Northwind.Domain\FleetControl.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Domain", "FleetControl.Domain\FleetControl.Domain.csproj", "{0A18018C-95CA-43CB-BFBF-5DB086E93009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application", "Northwind.Application\FleetControl.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application", "FleetControl.Application\FleetControl.Application.csproj", "{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{36DA64CD-41D5-48FD-8AFE-EBBF8EFD57ED}"
 	ProjectSection(SolutionItems) = preProject
@@ -25,17 +25,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{36DA64CD-4
 		Slides.pdf = Slides.pdf
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Infrastructure", "Northwind.Infrastructure\Northwind.Infrastructure.csproj", "{1C11E54E-54DB-47A2-9D10-03AFDA347F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Commands", "FleetControl.Application.Commands\FleetControl.Application.Commands.csproj", "{4929862A-1A77-4BD6-9010-3FB43D4C8008}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Persistence", "Northwind.Persistence\Northwind.Persistence.csproj", "{34BB0A51-74B9-46B6-BEAA-94A914F552EE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI", "Northwind.WebUI\Northwind.WebUI.csproj", "{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Commands", "Northwind.Application.Commands\FleetControl.Application.Commands.csproj", "{4929862A-1A77-4BD6-9010-3FB43D4C8008}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Queries", "Northwind.Application.Queries\FleetControl.Application.Queries.csproj", "{C5313DE3-DAB0-45C3-A78B-6555AF188C44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Application.Queries", "FleetControl.Application.Queries\FleetControl.Application.Queries.csproj", "{C5313DE3-DAB0-45C3-A78B-6555AF188C44}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Core", "FleetControl.Core\FleetControl.Core.csproj", "{807E704F-1AF0-4FB2-94F4-41C1823274F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Persistence", "FleetControl.Persistence\FleetControl.Persistence.csproj", "{4D545A09-675A-4EE9-80EA-1E6D61824362}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.Infrastructure", "FleetControl.Infrastructure\FleetControl.Infrastructure.csproj", "{1629A107-FA57-452B-B552-49119B3B53ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetControl.WebUI", "FleetControl.WebUI\FleetControl.WebUI.csproj", "{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,18 +55,6 @@ Global
 		{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C11E54E-54DB-47A2-9D10-03AFDA347F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C11E54E-54DB-47A2-9D10-03AFDA347F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C11E54E-54DB-47A2-9D10-03AFDA347F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C11E54E-54DB-47A2-9D10-03AFDA347F22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34BB0A51-74B9-46B6-BEAA-94A914F552EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34BB0A51-74B9-46B6-BEAA-94A914F552EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34BB0A51-74B9-46B6-BEAA-94A914F552EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34BB0A51-74B9-46B6-BEAA-94A914F552EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4929862A-1A77-4BD6-9010-3FB43D4C8008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4929862A-1A77-4BD6-9010-3FB43D4C8008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4929862A-1A77-4BD6-9010-3FB43D4C8008}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,6 +67,18 @@ Global
 		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807E704F-1AF0-4FB2-94F4-41C1823274F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D545A09-675A-4EE9-80EA-1E6D61824362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D545A09-675A-4EE9-80EA-1E6D61824362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D545A09-675A-4EE9-80EA-1E6D61824362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D545A09-675A-4EE9-80EA-1E6D61824362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1629A107-FA57-452B-B552-49119B3B53ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1629A107-FA57-452B-B552-49119B3B53ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1629A107-FA57-452B-B552-49119B3B53ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1629A107-FA57-452B-B552-49119B3B53ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,12 +91,12 @@ Global
 		{3C7E8164-A2CE-471A-9C15-E1A74E4BE9D9} = {C1158497-4B38-48DD-B698-57B7A0D50249}
 		{0A18018C-95CA-43CB-BFBF-5DB086E93009} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
 		{5FB1A4D7-D13E-47C3-9152-3890B8CA9C37} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
-		{1C11E54E-54DB-47A2-9D10-03AFDA347F22} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
-		{34BB0A51-74B9-46B6-BEAA-94A914F552EE} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
-		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26} = {833DEA57-A970-418C-831C-2355B8294766}
 		{4929862A-1A77-4BD6-9010-3FB43D4C8008} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
 		{C5313DE3-DAB0-45C3-A78B-6555AF188C44} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
 		{807E704F-1AF0-4FB2-94F4-41C1823274F8} = {0FEB6ADF-29FD-48CE-AE0F-9E19E9209795}
+		{4D545A09-675A-4EE9-80EA-1E6D61824362} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
+		{1629A107-FA57-452B-B552-49119B3B53ED} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
+		{F4EAEBDF-6312-4989-A5DA-A47B9DFFC3C3} = {833DEA57-A970-418C-831C-2355B8294766}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D5D0CA3-C6B8-436C-82B0-39820C8A13FA}
