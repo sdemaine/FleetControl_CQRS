@@ -1,7 +1,8 @@
-# NorthwindTraders
+# FleetControl
 **Modified from https://github.com/JasonGT/NorthwindTraders**
 
-Northwind Traders is a sample application built using ASP.NET Core and Entity Framework Core. The architecture and design of the project is explained in the video:
+This application as adapted from the Northwind Traders app that was built by JasonGT.
+This app was built using ASP.NET Core and Entity Framework Core. The architecture and design of the project is explained in the video:
 
 * [Clean Architecture with ASP.NET Core 2.1](https://youtu.be/_lwCVE_XgqI) ([slide deck](https://github.com/JasonGT/NorthwindTraders/raw/master/Slides.pdf))
 
