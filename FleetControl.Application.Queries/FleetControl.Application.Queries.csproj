@@ -18,9 +18,4 @@
     <PackageReference Include="MediatR" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FleetControl.Application\FleetControl.Application.csproj" />
-    <ProjectReference Include="..\FleetControl.Domain\FleetControl.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

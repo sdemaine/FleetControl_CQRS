@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FleetControl.Application\FleetControl.Application.csproj" />
-    <ProjectReference Include="..\FleetControl.Common\FleetControl.Common.csproj" />
+    <ProjectReference Include="..\FleetControl.Common.Core\FleetControl.Common.Core.csproj" />
   </ItemGroup>
 
 </Project>
