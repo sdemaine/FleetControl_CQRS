@@ -9,41 +9,52 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
+namespace FleetControl.Application.Queries.Drivers.GetFleetDriverList
 {
-    public class GetFleetCustomerDriverList_QueryHandler : IRequestHandler<GetFleetCustomerDriverListQuery, GetFleetCustomerDriverList_ViewModel>
+    public class GetFleetDriverList_QueryHandler : IRequestHandler<GetFleetDriverListQuery, GetFleetDriverList_ViewModel>
     {
         private readonly IFleetControlDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetFleetCustomerDriverList_QueryHandler(IFleetControlDbContext context, IMapper mapper)
+        public GetFleetDriverList_QueryHandler(IFleetControlDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<GetFleetCustomerDriverList_ViewModel> Handle(GetFleetCustomerDriverListQuery request, CancellationToken cancellationToken)
+        public async Task<GetFleetDriverList_ViewModel> Handle(GetFleetDriverListQuery request, CancellationToken cancellationToken)
         {
             var sortByValue = (request.QueryRequest.SortBy ?? "LASTNAME").ToUpper();
             var sortByDirection = (request.QueryRequest.SortDirection ?? "ASC").ToUpper();
             var skip = request.QueryRequest.Skip;
             var take = request.QueryRequest.Take;
             var searchQuery = request.QueryRequest.SearchQuery;
+            var activeOnly = request.QueryRequest.ActiveOnly;
+            var baid = request.QueryRequest.Baid;
 
-            var customer = await _context.Customer.FirstOrDefaultAsync(x => x.Id == request.CustomerId);
+            IQueryable<Driver> driverQuery = _context.Driver;
 
-            if (customer == null) return null;
+            if (baid != 0)
+            {
+                var customer = await _context.Customer.FirstOrDefaultAsync(x => x.BAID == baid);
+                if (customer != null)
+                {
+                    driverQuery = driverQuery.Where(x => x.CustomerId == customer.Id);
+                } else
+                {
+                    driverQuery = driverQuery.Where(x => x.Id == 0);
+                }
+            }
 
-            IQueryable<Driver> driverQuery = _context.Driver.Where(x => x.CustomerId == customer.Id).AsQueryable();
-
-
+            if (activeOnly)
+            {
+                driverQuery = driverQuery.Where(x => x.Status == Core.StatusMode.Active);
+            }
 
             if (searchQuery != null)
             {
                 driverQuery = driverQuery.Where(x => x.FirstName.Contains(searchQuery) || x.LastName.Contains(searchQuery) || x.TheirEmployeeNumber.Contains(searchQuery));
             }
-
-
 
             if (take != 0)
             {
@@ -81,7 +92,7 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
 
             var drivers = await driverQuery.ToListAsync();
 
-            return new GetFleetCustomerDriverList_ViewModel(drivers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetCustomerDriverList_ViewDto>>(drivers));
+            return new GetFleetDriverList_ViewModel(drivers.Count, "previousPage", "nextPage", _mapper.Map<IEnumerable<GetFleetDriverList_Dto>>(drivers));
         }
     }
 }

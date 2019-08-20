@@ -6,12 +6,12 @@ namespace FleetControl.Application.Queries.Customers.GetFleetCustomer
     public class GetFleetCustomerDriverListQuery : IRequest<GetFleetCustomerDriverList_ViewModel>
     {
         public QueryRequestModel QueryRequest { get; }
-        public int Baid { get; }
+        public int CustomerId { get; }
 
-        public GetFleetCustomerDriverListQuery(int baid, QueryRequestModel queryRequest)
+        public GetFleetCustomerDriverListQuery(int customerId, QueryRequestModel queryRequest)
         {
             QueryRequest = queryRequest;
-            Baid = baid;
+            CustomerId = customerId;
         }
     }
 }

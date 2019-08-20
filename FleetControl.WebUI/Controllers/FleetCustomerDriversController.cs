@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace FleetControl.WebUI.Controllers
 {
-    [Route("api/FleetDrivers")]
-    public class FleetDriversController : BaseController
+    [Route("api/FleetCustomers/{customerId}/FleetDrivers")]
+    public class FleetCustomerDriversController : BaseController
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<GetFleetCustomerDriverList_ViewModel>>> GetAll([FromQuery] QueryRequestModel queryRequest)
+        public async Task<ActionResult<IEnumerable<GetFleetCustomerDriverList_ViewModel>>> Get(int customerId, [FromQuery] QueryRequestModel queryRequest)
         {
-            return Ok(await Mediator.Send(new GetFleetDriverListQuery(queryRequest)));
+            return Ok(await Mediator.Send(new GetFleetCustomerDriverListQuery(customerId, queryRequest)));
         }
     }
 }
