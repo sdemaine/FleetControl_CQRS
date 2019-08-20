@@ -2,8 +2,8 @@
 
 namespace FleetControl.Application.Queries
 {
-    public class GetFleetCustomersList_ViewModel
+    public class GetFleetCustomersList_ViewModel : QueryViewModel
     {
-        public IList<GetFleetCustomer_ViewModel> Customers { get; set; }
+        public IEnumerable<GetFleetCustomerList_Dto> Customers { get; set; }
     }
 }
